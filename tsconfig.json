@@ -4,7 +4,7 @@
         "module": "esnext",
         "jsx": "react",
         "sourceMap": true,
-        "outDir": "dist",
+        "outDir": "./dist",
         "strict": true,
         "moduleResolution": "node",
         "allowSyntheticDefaultImports": true,
@@ -20,7 +20,9 @@
         "paths": {
           "*": [
             "*",
-          ]
+          ],
+          "github-coffee-package-test-rollup/*": ["dist/*"],
+          "github-coffee-package-test-rollup/utils": ["dist/utils"]
         },
         "allowJs": true,
         "isolatedModules": true,

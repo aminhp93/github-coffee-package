@@ -1,6 +1,6 @@
 {
-    "name": "react-sample",
-    "version": "1.0.0",
+    "name": "github-coffee-package-test-rollup",
+    "version": "0.0.18",
     "main": "dist/index.js",
     "module": "dist/index.esm.js",
     "types": "dist/types/index.d.ts",
@@ -8,7 +8,7 @@
         "dist"
     ],
     "scripts": {
-        "build": "rollup -c"
+        "build": "rimraf dist && rollup -c"
     },
     "peerDependencies": {
         "react": "^18.3.1",
@@ -21,6 +21,7 @@
         "postcss": "^8.4.47",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
+        "rimraf": "^6.0.1",
         "rollup-plugin-dts": "^6.1.1",
         "rollup-plugin-postcss": "^4.0.2"
     },

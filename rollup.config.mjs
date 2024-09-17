@@ -8,26 +8,20 @@ import postcss from 'rollup-plugin-postcss';
 import dts from 'rollup-plugin-dts';
 import typescriptEngine from 'typescript';
 
-const packageJson = JSON.parse(readFileSync('./package.json'));
-
 export default defineConfig(
   {
-    input: './src/index.ts',
-    output: [
-      {
-        file: packageJson.main,
-        format: 'cjs',
-        sourcemap: false,
-        exports: 'named',
-        name: packageJson.name,
-      },
-      {
-        file: packageJson.module,
-        format: 'es',
-        exports: 'named',
-        sourcemap: false,
-      },
-    ],
+    input: {
+      index: 'src/index.ts',
+      utils: 'src/utils/index.ts',
+    },
+    output: {
+      dir: 'dist',
+      format: 'esm',
+      exports: 'named',
+      sourcemap: false,
+      preserveModules: true,
+      preserveModulesRoot: 'src',
+    },
     plugins: [
       postcss({
         plugins: [],
@@ -39,6 +33,8 @@ export default defineConfig(
       typescript({
         tsconfig: './tsconfig.json',
         typescript: typescriptEngine,
+        declaration: true,
+        declarationDir: 'dist',
         sourceMap: false,
         exclude: [
           'coverage',
