@@ -7,12 +7,14 @@ import external from 'rollup-plugin-peer-deps-external';
 import postcss from 'rollup-plugin-postcss';
 import dts from 'rollup-plugin-dts';
 import typescriptEngine from 'typescript';
+import json from '@rollup/plugin-json';
 
 export default defineConfig(
   {
     input: {
       index: 'src/index.ts',
       utils: 'src/utils/index.ts',
+      configs: 'src/configs/index.ts',
     },
     output: {
       dir: 'dist',
@@ -23,6 +25,7 @@ export default defineConfig(
       preserveModulesRoot: 'src',
     },
     plugins: [
+      json(),
       postcss({
         plugins: [],
         minimize: true,

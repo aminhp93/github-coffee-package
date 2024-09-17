@@ -1,0 +1,14 @@
+/* Find way to use styled component instead of css module */
+.treeRoot {
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.draggingSource {
+  opacity: 0.3;
+}
+
+.dropTarget {
+  background-color: #e8f0fe;
+}
