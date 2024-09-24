@@ -52,7 +52,10 @@ export const getValidatedOptions = (
   }
 
   if (newOptions.plotOptions !== undefined) {
-    validatedOptions.plotOptions = { ...validatedOptions.plotOptions, ...newOptions.plotOptions };
+    validatedOptions.plotOptions = {
+      ...validatedOptions.plotOptions,
+      ...newOptions.plotOptions,
+    };
   }
 
   return validatedOptions;
@@ -71,7 +74,10 @@ const getXTitleYAxis = (i: number, isEnum: boolean) => {
   return isEnum ? 95 : 50;
 };
 
-export const getOptionsRowSelectionModelChange = (rows: string[], prev: Highcharts.Options) => {
+export const getOptionsRowSelectionModelChange = (
+  rows: string[],
+  prev: Highcharts.Options
+) => {
   const newSeries: Highcharts.SeriesOptionsType[] = [];
   const newYAxis: Highcharts.YAxisOptions[] = [];
 
@@ -86,7 +92,10 @@ export const getOptionsRowSelectionModelChange = (rows: string[], prev: Highchar
         if (!objIndexYAxisVisible[item.yAxis]) {
           objIndexYAxisVisible[item.yAxis] = [true];
         } else {
-          objIndexYAxisVisible[item.yAxis] = [...objIndexYAxisVisible[item.yAxis], true];
+          objIndexYAxisVisible[item.yAxis] = [
+            ...objIndexYAxisVisible[item.yAxis],
+            true,
+          ];
         }
       }
     } else {
@@ -95,7 +104,10 @@ export const getOptionsRowSelectionModelChange = (rows: string[], prev: Highchar
         if (!objIndexYAxisVisible[item.yAxis]) {
           objIndexYAxisVisible[item.yAxis] = [false];
         } else {
-          objIndexYAxisVisible[item.yAxis] = [...objIndexYAxisVisible[item.yAxis], false];
+          objIndexYAxisVisible[item.yAxis] = [
+            ...objIndexYAxisVisible[item.yAxis],
+            false,
+          ];
         }
       }
     }
@@ -121,7 +133,10 @@ export const getOptionsRowSelectionModelChange = (rows: string[], prev: Highchar
   };
 };
 
-export const getOptionsRowRemove = (row: PlotDataDetail, prev: Highcharts.Options) => {
+export const getOptionsRowRemove = (
+  row: PlotDataDetail,
+  prev: Highcharts.Options
+) => {
   let newSeries = prev.series as Highcharts.SeriesOptionsType[];
   let newYAxis = prev.yAxis as Highcharts.YAxisOptions[];
 
@@ -129,12 +144,14 @@ export const getOptionsRowRemove = (row: PlotDataDetail, prev: Highcharts.Option
   const deleteSeriesYAxis = deleteSeries?.yAxis;
 
   //  find all series with the same yAxis
-  const seriesWithSameYAxis = prev.series?.filter((item) => item.yAxis === deleteSeriesYAxis) || [];
+  const seriesWithSameYAxis =
+    prev.series?.filter((item) => item.yAxis === deleteSeriesYAxis) || [];
   if (seriesWithSameYAxis.length === 1) {
     // delete yAxis in prev.yAxis at index deleteSeriesYAxis
     newYAxis =
-      (prev.yAxis as Highcharts.YAxisOptions[]).filter((_, index) => index !== deleteSeriesYAxis) ||
-      [];
+      (prev.yAxis as Highcharts.YAxisOptions[]).filter(
+        (_, index) => index !== deleteSeriesYAxis
+      ) || [];
 
     newSeries = newSeries
       .filter((item) => {
@@ -232,7 +249,8 @@ export const getOptionsFromData = (data: PlotDataDetail[], config?: Config) => {
         tickAmount,
         visible: true,
         gridLineWidth: isEnum ? 0 : 1,
-        categories: isEnum && item.customUnit ? Object.keys(item.customUnit) : undefined,
+        categories:
+          isEnum && item.customUnit ? Object.keys(item.customUnit) : undefined,
         labels: {
           style: {
             color: DEFAULT_CHART_COLOR[colorCount],
@@ -318,7 +336,10 @@ export type PlotTableProps = SeriesOptionsType[] & {
   point?: HoverPoints[string];
 };
 
-export const filteredRowTable = (data: SeriesOptionsType[], hoverData?: HoverPoints) => {
+export const filteredRowTable = (
+  data: SeriesOptionsType[],
+  hoverData?: HoverPoints
+) => {
   const dataFilter = data.filter((item) => {
     const isAreaRangeSeries = item.type === "arearange";
     return !isAreaRangeSeries;

@@ -7,14 +7,20 @@ type CustomEventListener<Data> = (e: CustomEvent<Data>) => void;
 type EventDataType<K> = K extends keyof EventData ? EventData[K] : never;
 
 export const GlobalEvent = {
-  subscribe: <T extends EventType>(eventType: T, listener?: CustomEventListener<EventDataType<T>>) => {
+  subscribe: <T extends EventType>(
+    eventType: T,
+    listener?: CustomEventListener<EventDataType<T>>
+  ) => {
     document.addEventListener(eventType, listener as EventListener);
   },
-  unsubscribe: <T extends EventType>(eventType: T, listener?: CustomEventListener<EventDataType<T>>) => {
+  unsubscribe: <T extends EventType>(
+    eventType: T,
+    listener?: CustomEventListener<EventDataType<T>>
+  ) => {
     document.removeEventListener(eventType, listener as EventListener);
   },
   publish: <T extends EventType>(eventType: T, data?: EventDataType<T>) => {
     const event = new CustomEvent(eventType, { detail: data });
     document.dispatchEvent(event);
   },
-} 
+};

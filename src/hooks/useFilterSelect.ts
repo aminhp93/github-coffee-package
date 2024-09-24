@@ -19,13 +19,19 @@ export function useFilterSelect<T1 extends object = { [key: string]: unknown }>(
     return rowsData.filter((row) => filterValuesSet.has(row[filterField]));
   }, [filterValues, rowsData, filterField]);
 
-  const handleChangeFilter = (event: SelectChangeEvent<typeof filterValues>) => {
+  const handleChangeFilter = (
+    event: SelectChangeEvent<typeof filterValues>
+  ) => {
     const {
       target: { value },
     } = event;
     setFilterValues(
       // On autofill we get a stringified value.
-      typeof value === "string" ? (value ? (value.split(",") as T1[keyof T1][]) : []) : value
+      typeof value === "string"
+        ? value
+          ? (value.split(",") as T1[keyof T1][])
+          : []
+        : value
     );
   };
 

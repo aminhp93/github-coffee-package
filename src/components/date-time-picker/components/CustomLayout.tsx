@@ -35,7 +35,8 @@ function a11yProps(index: number) {
   };
 }
 
-interface Props extends PickersLayoutProps<dayjs.Dayjs | null, dayjs.Dayjs, DateView> {
+interface Props
+  extends PickersLayoutProps<dayjs.Dayjs | null, dayjs.Dayjs, DateView> {
   onChangeTimeConfig?: (data: TimeConfig) => void;
   onCheckCurrentDay?: () => void;
 }
@@ -48,11 +49,14 @@ const CustomLayout = (props: Props) => {
   const [range, setRange] = useState<Range>(LIST_START_TIME_FRAME(t)[0]);
   const [checkWholeDay, setCheckWholeDay] = useState(true);
 
-  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+  const handleChange = (_: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
 
-  const handleChangeRange = (event: React.SyntheticEvent, newValue: Range | null) => {
+  const handleChangeRange = (
+    _: React.SyntheticEvent,
+    newValue: Range | null
+  ) => {
     if (!newValue) return;
     setRange(newValue);
     props.onChangeTimeConfig?.({
@@ -60,7 +64,10 @@ const CustomLayout = (props: Props) => {
       value: newValue,
     });
   };
-  const handleChangeCheckWholeDay = (event: React.SyntheticEvent, value: boolean) => {
+  const handleChangeCheckWholeDay = (
+    _: React.SyntheticEvent,
+    value: boolean
+  ) => {
     setCheckWholeDay(value);
   };
 
@@ -87,11 +94,17 @@ const CustomLayout = (props: Props) => {
         },
       }}
     >
-      <PickersLayoutContentWrapper className={pickersLayoutClasses.contentWrapper}>
+      <PickersLayoutContentWrapper
+        className={pickersLayoutClasses.contentWrapper}
+      >
         <Box sx={{ width: "100%" }}>
-          <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
+          <Tabs
+            value={value}
+            onChange={handleChange}
+            aria-label="basic tabs example"
+          >
             {LIST_TABS.map((tab, index) => (
-              <Tab key={index} label={tab.label} {...a11yProps(index)} />
+              <Tab key={tab.value} label={tab.label} {...a11yProps(index)} />
             ))}
           </Tabs>
         </Box>
@@ -104,7 +117,9 @@ const CustomLayout = (props: Props) => {
               sx={{ width: 300 }}
               value={range}
               onChange={handleChangeRange}
-              renderInput={(params) => <TextField {...params} label="Select Range" />}
+              renderInput={(params) => (
+                <TextField {...params} label="Select Range" />
+              )}
             />
           </Box>
         )}
@@ -118,13 +133,18 @@ const CustomLayout = (props: Props) => {
               }}
             >
               {content}
-              {!checkWholeDay && <MultiSectionDigitalClock onChange={handleChangeDigitalClock} />}
+              {!checkWholeDay && (
+                <MultiSectionDigitalClock onChange={handleChangeDigitalClock} />
+              )}
             </Box>
             <Box sx={{ display: "flex", justifyContent: "space-between" }}>
               <FormGroup>
                 <FormControlLabel
                   control={
-                    <Checkbox checked={checkWholeDay} onChange={handleChangeCheckWholeDay} />
+                    <Checkbox
+                      checked={checkWholeDay}
+                      onChange={handleChangeCheckWholeDay}
+                    />
                   }
                   label="Whole day"
                 />

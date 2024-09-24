@@ -1,4 +1,10 @@
-import { Edit, FilterList, OpenInNew, Preview, StarBorder } from "@mui/icons-material";
+import {
+  Edit,
+  FilterList,
+  OpenInNew,
+  Preview,
+  StarBorder,
+} from "@mui/icons-material";
 import {
   Box,
   Button,
@@ -15,7 +21,12 @@ import { keyBy } from "lodash";
 import React from "react";
 
 import { HeaderLayoutProvider, Tooltip } from "../../..";
-import { GridActionsCellItem, GridColDef, Table, TableProps } from "../../../components/table";
+import {
+  GridActionsCellItem,
+  GridColDef,
+  Table,
+  TableProps,
+} from "../../../components/table";
 import { useFilterSelect } from "../../../hooks";
 import { i18n, useTranslation } from "../../../utils/translation/i18n";
 import { fakeData } from "./Table.utils";
@@ -110,10 +121,18 @@ const PlaygroundTableTemplate: StoryFn<TableProps> = (args) => {
             { value: "2", label: "Info 2" },
           ],
           quickActionListNodes: [
-            <Button variant="outlined" startIcon={<FilterList />} key="quick-action-1">
+            <Button
+              variant="outlined"
+              startIcon={<FilterList />}
+              key="quick-action-1"
+            >
               {t("QuickAction1")}
             </Button>,
-            <Button variant="outlined" startIcon={<FilterList />} key="quick-action-2">
+            <Button
+              variant="outlined"
+              startIcon={<FilterList />}
+              key="quick-action-2"
+            >
               {t("QuickAction2")}
             </Button>,
           ],

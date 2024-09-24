@@ -1,5 +1,8 @@
 import { Box, Stack } from "@mui/material";
-import Highcharts, { OptionsStepValue, SeriesOptionsType } from "highcharts/highstock";
+import Highcharts, {
+  OptionsStepValue,
+  SeriesOptionsType,
+} from "highcharts/highstock";
 import { cloneDeep } from "lodash";
 import React, { useCallback, useMemo } from "react";
 
@@ -28,12 +31,15 @@ const ChartFooter = ({ hoverPoints, series, setOptions }: Props) => {
     return filteredRowTable(series, hoverPoints);
   }, [series, hoverPoints]);
 
-  const onRowRemove = useCallback((row: PlotDataDetail) => {
-    setOptions((prev) => {
-      const newOptions = getOptionsRowRemove(row, prev);
-      return getValidatedOptions(newOptions, prev);
-    });
-  }, [setOptions]);
+  const onRowRemove = useCallback(
+    (row: PlotDataDetail) => {
+      setOptions((prev) => {
+        const newOptions = getOptionsRowRemove(row, prev);
+        return getValidatedOptions(newOptions, prev);
+      });
+    },
+    [setOptions]
+  );
 
   // TODO: now it is not change from step line to normal line. check later
   const onChangeStepLine = (state: boolean, idRow: string) => {
@@ -63,51 +69,69 @@ const ChartFooter = ({ hoverPoints, series, setOptions }: Props) => {
     });
   };
 
-  const onChangeChartType = useCallback((state: ITypeChart, idRow: string) => {
-    setOptions((prev) => {
-      const newOptions = {
-        series: prev.series?.map((item) => {
-          const cloneItem = cloneDeep(item);
-          if (cloneItem.id !== undefined) {
-            const idRangeSplit = getIdChartRange(cloneItem.id);
+  const onChangeChartType = useCallback(
+    (state: ITypeChart, idRow: string) => {
+      setOptions((prev) => {
+        const newOptions = {
+          series: prev.series?.map((item) => {
+            const cloneItem = cloneDeep(item);
+            if (cloneItem.id !== undefined) {
+              const idRangeSplit = getIdChartRange(cloneItem.id);
 
-            if (item.type === "arearange" && (cloneItem.id === idRow || idRangeSplit === idRow)) {
-              cloneItem.visible = state === "line";
+              if (
+                item.type === "arearange" &&
+                (cloneItem.id === idRow || idRangeSplit === idRow)
+              ) {
+                cloneItem.visible = state === "line";
+              }
+
+              if (cloneItem.id === idRow) {
+                return {
+                  ...cloneItem,
+                  type: state,
+                } as Highcharts.SeriesOptionsType;
+              }
             }
+            return cloneItem;
+          }),
+        };
+        return getValidatedOptions(newOptions, prev);
+      });
+    },
+    [setOptions]
+  );
 
-            if (cloneItem.id === idRow) {
-              return { ...cloneItem, type: state } as Highcharts.SeriesOptionsType;
+  const changeColorChangeSeries = useCallback(
+    (color: string, idRow: string) => {
+      setOptions((prev) => {
+        const newOptions = {
+          series: prev.series?.map((item) => {
+            let cloneItem = cloneDeep(item);
+            if (cloneItem.id !== undefined) {
+              const idRangeSplit = getIdChartRange(cloneItem.id);
+
+              if (
+                item.type === "arearange" &&
+                (cloneItem.id === idRow || idRangeSplit === idRow)
+              ) {
+                cloneItem = {
+                  ...cloneItem,
+                  color,
+                } as Highcharts.SeriesOptionsType;
+              }
+
+              if (cloneItem.id === idRow) {
+                return { ...cloneItem, color } as Highcharts.SeriesOptionsType;
+              }
             }
-          }
-          return cloneItem;
-        }),
-      };
-      return getValidatedOptions(newOptions, prev);
-    });
-  }, [setOptions]);
-
-  const changeColorChangeSeries = useCallback((color: string, idRow: string) => {
-    setOptions((prev) => {
-      const newOptions = {
-        series: prev.series?.map((item) => {
-          let cloneItem = cloneDeep(item);
-          if (cloneItem.id !== undefined) {
-            const idRangeSplit = getIdChartRange(cloneItem.id);
-
-            if (item.type === "arearange" && (cloneItem.id === idRow || idRangeSplit === idRow)) {
-              cloneItem = { ...cloneItem, color } as Highcharts.SeriesOptionsType;
-            }
-
-            if (cloneItem.id === idRow) {
-              return { ...cloneItem, color } as Highcharts.SeriesOptionsType;
-            }
-          }
-          return cloneItem;
-        }),
-      };
-      return getValidatedOptions(newOptions, prev);
-    });
-  }, [setOptions]);
+            return cloneItem;
+          }),
+        };
+        return getValidatedOptions(newOptions, prev);
+      });
+    },
+    [setOptions]
+  );
 
   const COLUMNS: GridColDef[] = [
     {
@@ -121,9 +145,18 @@ const ChartFooter = ({ hoverPoints, series, setOptions }: Props) => {
         };
 
         return (
-          <Stack spacing={1} direction="row" justifyContent="start" alignItems="center">
+          <Stack
+            spacing={1}
+            direction="row"
+            justifyContent="start"
+            alignItems="center"
+          >
             <Box sx={{ width: "25px", height: "25px" }}>
-              <ColorPicker value={param.row.color} variant="button" onChange={handleColorChange} />
+              <ColorPicker
+                value={param.row.color}
+                variant="button"
+                onChange={handleColorChange}
+              />
             </Box>
             <Box>{param.value}</Box>
           </Stack>
@@ -192,8 +225,12 @@ const ChartFooter = ({ hoverPoints, series, setOptions }: Props) => {
           <Box>
             <LineSettings
               cbRemove={() => onRowRemove(params.row)}
-              onChangeStepLine={(state) => onChangeStepLine(state, params.row.id)}
-              onChangeChartType={(chartType) => onChangeChartType(chartType, params.row.id)}
+              onChangeStepLine={(state) =>
+                onChangeStepLine(state, params.row.id)
+              }
+              onChangeChartType={(chartType) =>
+                onChangeChartType(chartType, params.row.id)
+              }
             />
           </Box>
         );

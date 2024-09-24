@@ -57,10 +57,18 @@ const CustomHeaderTableTemplate = () => {
           { value: "2", label: "Info 2" },
         ],
         quickActionListNodes: [
-          <Button variant="outlined" startIcon={<FilterList />} key="quick-action-1">
+          <Button
+            variant="outlined"
+            startIcon={<FilterList />}
+            key="quick-action-1"
+          >
             {"Quick action 1"}
           </Button>,
-          <Button variant="outlined" startIcon={<FilterList />} key="quick-action-2">
+          <Button
+            variant="outlined"
+            startIcon={<FilterList />}
+            key="quick-action-2"
+          >
             {"Quick action 2"}
           </Button>,
         ],

@@ -25,7 +25,9 @@ import { EmptyDataRow } from "./components/EmptyDataRow";
 import { getTableLocalization } from "./localization";
 
 export type TableProps = {
-  emptyDataRowComponent?: React.JSXElementConstructor<GridSlotProps["noRowsOverlay"]>;
+  emptyDataRowComponent?: React.JSXElementConstructor<
+    GridSlotProps["noRowsOverlay"]
+  >;
   customResizeColumn?: boolean;
   customHeader?: HeaderLayoutProps;
   hideHeader?: boolean;

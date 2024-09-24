@@ -1,0 +1,1 @@
+eslint ./src --ext .js,.jsx,.ts,.tsx --max-warnings=0

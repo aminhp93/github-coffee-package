@@ -1,5 +1,10 @@
 // Import libraries
-import { KeyboardArrowDown, MoreVert, Close, DeleteOutline } from "@mui/icons-material";
+import {
+  KeyboardArrowDown,
+  MoreVert,
+  Close,
+  DeleteOutline,
+} from "@mui/icons-material";
 import {
   Select,
   SelectChangeEvent,
@@ -116,7 +121,9 @@ export default function LineSettings({
                   height: "32px",
                 }}
               >
-                <MenuItem value={"line"}>{t("_plot.lineSettings.line")}</MenuItem>
+                <MenuItem value={"line"}>
+                  {t("_plot.lineSettings.line")}
+                </MenuItem>
                 <MenuItem value={"bar"}>{t("_plot.lineSettings.bar")}</MenuItem>
               </Select>
             </>
@@ -136,7 +143,11 @@ export default function LineSettings({
             <MenuItemContent>
               <>
                 <Typography>{t("_plot.lineSettings.stepLine")}</Typography>
-                <Switch size="small" checked={isStepLine} onChange={handleSwitchStepLine} />
+                <Switch
+                  size="small"
+                  checked={isStepLine}
+                  onChange={handleSwitchStepLine}
+                />
               </>
             </MenuItemContent>
           </MenuItem>
@@ -163,7 +174,11 @@ export default function LineSettings({
               >
                 {t("_plot.lineSettings.remove")}
               </Typography>
-              <IconButton sx={{ marginRight: "-6px" }} role="remove" onClick={cbRemove}>
+              <IconButton
+                sx={{ marginRight: "-6px" }}
+                role="remove"
+                onClick={cbRemove}
+              >
                 <DeleteOutline color="error" fontSize="small" />
               </IconButton>
             </>

@@ -5,7 +5,12 @@ import React, { ReactNode } from "react";
 import { deepmerge } from "@mui/utils";
 import CssBaseline from "@mui/material/CssBaseline";
 import GlobalStyles from "@mui/material/GlobalStyles";
-import { ThemeProvider, createTheme, responsiveFontSizes, Theme } from "@mui/material/styles";
+import {
+  ThemeProvider,
+  createTheme,
+  responsiveFontSizes,
+  Theme,
+} from "@mui/material/styles";
 
 // ** Type Imports
 import { Settings } from "../context/settingsContext";
@@ -45,7 +50,8 @@ const ThemeComponent = (props: Props) => {
     deepmerge({ ...overrides(theme) }, UserThemeOptions()?.components);
 
   // ** Deep Merge Typography of core and user
-  const mergeTypography = () => deepmerge(typography(), UserThemeOptions()?.typography);
+  const mergeTypography = () =>
+    deepmerge(typography(), UserThemeOptions()?.typography);
 
   // ** Continue theme creation and pass merged component overrides to CreateTheme function
   theme = createTheme(theme, {

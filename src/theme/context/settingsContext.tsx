@@ -143,7 +143,10 @@ export const SettingsContext = createContext<SettingsContextValue>({
   settings: initialSettings,
 });
 
-export const SettingsProvider = ({ children, pageSettings }: SettingsProviderProps) => {
+export const SettingsProvider = ({
+  children,
+  pageSettings,
+}: SettingsProviderProps) => {
   // ** State
   const [settings, setSettings] = useState<Settings>({ ...initialSettings });
 
@@ -160,7 +163,7 @@ export const SettingsProvider = ({ children, pageSettings }: SettingsProviderPro
 
   useEffect(() => {
     if (settings.layout === "horizontal" && settings.mode === "semi-dark") {
-      saveSettings(({ ...settings, mode: "light" }));
+      saveSettings({ ...settings, mode: "light" });
     }
     if (settings.layout === "horizontal" && settings.appBar === "hidden") {
       saveSettings({ ...settings, appBar: "fixed" });
@@ -172,9 +175,16 @@ export const SettingsProvider = ({ children, pageSettings }: SettingsProviderPro
     setSettings(updatedSettings);
   };
 
-  const memoizedValue = React.useMemo(() => ({ settings, saveSettings }), [settings]);
+  const memoizedValue = React.useMemo(
+    () => ({ settings, saveSettings }),
+    [settings]
+  );
 
-  return <SettingsContext.Provider value={memoizedValue}>{children}</SettingsContext.Provider>;
+  return (
+    <SettingsContext.Provider value={memoizedValue}>
+      {children}
+    </SettingsContext.Provider>
+  );
 };
 
 export const SettingsConsumer = ({ children }: { children: ReactNode }) => {

@@ -43,7 +43,9 @@ export const useDialogsStore = create<DialogsStore>()(
         const findDialog = get().dialogs.find((d) => d.idRef === dialog.idRef);
         if (findDialog) {
           return set((state) => ({
-            dialogs: state.dialogs.map((d) => (d.idRef === dialog.idRef ? dialog : d)),
+            dialogs: state.dialogs.map((d) =>
+              d.idRef === dialog.idRef ? dialog : d
+            ),
           }));
         } else {
           // 2. if dialog with idRef does not exist, add it

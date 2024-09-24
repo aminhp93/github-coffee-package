@@ -1,4 +1,8 @@
-import { ItemDataSrcConfig, PropertyPickerType, TableValues } from "../../types";
+import {
+  ItemDataSrcConfig,
+  PropertyPickerType,
+  TableValues,
+} from "../../types";
 
 export const color = (label = "Color", values?: string) => {
   return {
@@ -119,7 +123,11 @@ export const objectList = (label = "Setup", values?: unknown) => ({
   label,
 });
 
-export const dmf = (label = "Matrix", values?: unknown, options?: { headers?: unknown }) => ({
+export const dmf = (
+  label = "Matrix",
+  values?: unknown,
+  options?: { headers?: unknown }
+) => ({
   type: PropertyPickerType.DMF,
   values,
   label,
@@ -164,13 +172,19 @@ export const report = (label = "Report", values?: unknown) => ({
   label,
 });
 
-export const adaptiveDashboard = (label = "Adaptive Dashboard", values?: unknown) => ({
+export const adaptiveDashboard = (
+  label = "Adaptive Dashboard",
+  values?: unknown
+) => ({
   type: PropertyPickerType.ADAPTIVE_DASHBOARD,
   values,
   label,
 });
 
-export const chart = (label = "Chart", values?: { timeInterval: string; type: string }) => ({
+export const chart = (
+  label = "Chart",
+  values?: { timeInterval: string; type: string }
+) => ({
   type: PropertyPickerType.CHART,
   values,
   label,
@@ -194,7 +208,10 @@ export const alarmClass = (label = "Alarm Class", values?: unknown) => ({
   label,
 });
 
-export const statusTableItem = (label = "Status Table Item", values?: unknown) => ({
+export const statusTableItem = (
+  label = "Status Table Item",
+  values?: unknown
+) => ({
   type: PropertyPickerType.STATUS_TABLE_ITEM,
   values,
   label,

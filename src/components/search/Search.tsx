@@ -1,6 +1,11 @@
 // Import MUI & lodash
 import { Search as SearchIcon } from "@mui/icons-material";
-import { InputAdornment, TextField, TextFieldProps, styled } from "@mui/material";
+import {
+  InputAdornment,
+  TextField,
+  TextFieldProps,
+  styled,
+} from "@mui/material";
 import { debounce } from "lodash";
 import React from "react";
 import { useTranslation } from "../../utils/translation/i18n";
@@ -12,16 +17,25 @@ type Props = Omit<TextFieldProps, "onChange"> & {
   onChange?: (keyword: string) => void;
 };
 
-const Search = ({ value, onChange, delay = 500, placeholder, ...props }: Props) => {
+const Search = ({
+  value,
+  onChange,
+  delay = 500,
+  placeholder,
+  ...props
+}: Props) => {
   const textFieldRef = React.useRef<HTMLInputElement>(null);
   const isMobile = useIsMobile();
   const { t } = useTranslation();
   const [isFocused, setIsFocused] = React.useState(false);
   const theme = useTheme();
 
-  const handleSearch = debounce((event: React.ChangeEvent<HTMLInputElement>) => {
-    onChange?.(event.target.value);
-  }, delay);
+  const handleSearch = debounce(
+    (event: React.ChangeEvent<HTMLInputElement>) => {
+      onChange?.(event.target.value);
+    },
+    delay
+  );
 
   const getDynamicStyles = (isMobile: boolean, isFocused: boolean) => ({
     width: isMobile ? "40px" : "100%",

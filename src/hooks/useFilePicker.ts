@@ -5,7 +5,7 @@ type Options = { multiple?: boolean; accept?: string };
 const DEFAULT_OPTIONS: Options = { multiple: true, accept: "*" };
 /**
  * Hook for picking files from user's computer
- * 
+ *
  * @param opts options for file input, default = { multiple: true, accept: "*" }
  */
 export function useFilePicker(opts: Options) {

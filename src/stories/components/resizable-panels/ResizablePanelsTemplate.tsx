@@ -10,7 +10,10 @@ const AppTemplate = () => {
       <ResizablePanels
         direction="vertical"
         defaultSizes={[25, 75]}
-        panels={[<div key={1}>{t("Panel1")}</div>, <div key={1}>{t("Panel2")}</div>]}
+        panels={[
+          <div key={1}>{t("Panel1")}</div>,
+          <div key={1}>{t("Panel2")}</div>,
+        ]}
       />
     </Box>
   );

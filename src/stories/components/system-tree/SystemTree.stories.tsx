@@ -11,4 +11,6 @@ export default {
 } as Meta<typeof SystemTree>;
 
 export const DefaultSystemTree = DefaultSystemTreeTemplate.bind({});
-export const DefaultSystemTreeWithPath = DefaultSystemTreeWithPathTemplate.bind({});
+export const DefaultSystemTreeWithPath = DefaultSystemTreeWithPathTemplate.bind(
+  {}
+);

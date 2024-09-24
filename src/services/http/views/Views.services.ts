@@ -14,26 +14,38 @@ const ViewsUrl = {
   listViews: (controllerId: string, type?: ViewsType) =>
     `/views/${controllerId}${type ? `?filter=${type}` : ""}`,
   createView: (controllerId: string) => `/views/${controllerId}`,
-  readView: (controllerId: string, viewId: string) => `/views/${controllerId}/${viewId}`,
-  updateView: (controllerId: string, viewId: string) => `/views/${controllerId}/${viewId}`,
-  deleteView: (controllerId: string, viewId: string) => `/views/${controllerId}/${viewId}`,
+  readView: (controllerId: string, viewId: string) =>
+    `/views/${controllerId}/${viewId}`,
+  updateView: (controllerId: string, viewId: string) =>
+    `/views/${controllerId}/${viewId}`,
+  deleteView: (controllerId: string, viewId: string) =>
+    `/views/${controllerId}/${viewId}`,
 };
 
 export const ViewsService = {
-  listViews: (controllerId: string, type?: ViewsType): Promise<ListViewsResponse> => {
+  listViews: (
+    controllerId: string,
+    type?: ViewsType
+  ): Promise<ListViewsResponse> => {
     return httpService({
       method: "GET",
       url: ViewsUrl.listViews(controllerId, type),
     });
   },
-  createView: (controllerId: string, data: CreateViewRequest): Promise<CreateViewResponse> => {
+  createView: (
+    controllerId: string,
+    data: CreateViewRequest
+  ): Promise<CreateViewResponse> => {
     return httpService({
       method: "POST",
       url: ViewsUrl.createView(controllerId),
       data,
     });
   },
-  readView: (controllerId: string, viewId: string): Promise<ReadViewResponse> => {
+  readView: (
+    controllerId: string,
+    viewId: string
+  ): Promise<ReadViewResponse> => {
     return httpService({
       method: "GET",
       url: ViewsUrl.readView(controllerId, viewId),
@@ -50,7 +62,10 @@ export const ViewsService = {
       data,
     });
   },
-  deleteView: (controllerId: string, viewId: string): Promise<DeleteViewResponse> => {
+  deleteView: (
+    controllerId: string,
+    viewId: string
+  ): Promise<DeleteViewResponse> => {
     return httpService({
       method: "DELETE",
       url: ViewsUrl.deleteView(controllerId, viewId),

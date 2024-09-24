@@ -12,7 +12,9 @@ const getTreeOptions = (
   returnedOptions?: TreeOption<TreeOptionType>[]
 ) => {
   if (actionType === "more") {
-    return nodeType === "controller" ? OPTIONS().controller.more : OPTIONS().folder.more;
+    return nodeType === "controller"
+      ? OPTIONS().controller.more
+      : OPTIONS().folder.more;
   } else if (actionType === "add") {
     if (nodeType === "controller") {
       return OPTIONS().controller.add;
@@ -31,7 +33,9 @@ const replaceObjectWithNoChildren = (objects: NodeModel[]) => {
   // Iterate over each object in the array
   objects.forEach((obj, index) => {
     // Check if there is no other object with this object's id as its parent
-    const hasNoChildren = !objects.some((otherObj) => otherObj.parent === obj.id);
+    const hasNoChildren = !objects.some(
+      (otherObj) => otherObj.parent === obj.id
+    );
     // If no other object has this object as its parent, add it to the result array
     if (hasNoChildren) {
       result.push(index);
@@ -70,7 +74,11 @@ export const convertDataToTreeView = ({
 
     if (node.type !== "network") {
       const optionsMoreActions = getTreeOptions(node.type, "more");
-      const optionsAddActions = getTreeOptions(node.type, "add", returnedOptions);
+      const optionsAddActions = getTreeOptions(
+        node.type,
+        "add",
+        returnedOptions
+      );
 
       formattedNode.data = {
         type: node.type,
@@ -135,7 +143,11 @@ export const getChildrenIdHelper = (
 };
 
 // Retrieve parent node's all children ids
-export const getChildrenIds = (parent: NodeModel, treeData: NodeModel[], excludeParent = false) => {
+export const getChildrenIds = (
+  parent: NodeModel,
+  treeData: NodeModel[],
+  excludeParent = false
+) => {
   const results = getChildrenIdHelper(parent, treeData);
   if (excludeParent) {
     const index = results.indexOf(parent.id);
@@ -145,7 +157,11 @@ export const getChildrenIds = (parent: NodeModel, treeData: NodeModel[], exclude
 };
 
 // Retrieve child node's all parent ids
-export const getParentIds = (child: NodeModel, treeData: NodeModel[], idList: NodeId[] = []) => {
+export const getParentIds = (
+  child: NodeModel,
+  treeData: NodeModel[],
+  idList: NodeId[] = []
+) => {
   if (child.parent == null) return;
   const parentNode = treeData.find((node) => node.id === child.parent);
   if (parentNode) {
@@ -155,7 +171,10 @@ export const getParentIds = (child: NodeModel, treeData: NodeModel[], idList: No
   return idList;
 };
 
-export const getDirectChildrenIds = (parentId: NodeId, treeData: NodeModel[]) => {
+export const getDirectChildrenIds = (
+  parentId: NodeId,
+  treeData: NodeModel[]
+) => {
   const results: NodeId[] = [];
   treeData.forEach((treeNode) => {
     if (treeNode.parent === parentId) {
@@ -175,9 +194,15 @@ export const getCurrentPathByNodeId = (
     currentPath.push(currentNode.text);
     if (currentNode.parent === 0) return currentPath;
 
-    const parentNode = data.find((node) => currentNode.parent.toString() === node.id.toString());
+    const parentNode = data.find(
+      (node) => currentNode.parent.toString() === node.id.toString()
+    );
     if (parentNode) {
-      return getCurrentPathByNodeId(parentNode.id.toString(), data, currentPath);
+      return getCurrentPathByNodeId(
+        parentNode.id.toString(),
+        data,
+        currentPath
+      );
     }
   }
   return [];
@@ -194,7 +219,9 @@ export const getParentIdsByNodeId = (
     currentPath.push(currentNode.id.toString());
     if (currentNode.parent === 0) return currentPath;
 
-    const parentNode = data.find((node) => currentNode.parent.toString() === node.id.toString());
+    const parentNode = data.find(
+      (node) => currentNode.parent.toString() === node.id.toString()
+    );
     if (parentNode) {
       return getParentIdsByNodeId(parentNode.id.toString(), data, currentPath);
     }

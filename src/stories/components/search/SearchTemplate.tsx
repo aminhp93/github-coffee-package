@@ -100,7 +100,9 @@ const SearchByFields = () => {
 
   return (
     <Box>
-      <Typography fontWeight={"bold"}>{`useSearch(data, {fields: ["id", "status"]})`}</Typography>
+      <Typography
+        fontWeight={"bold"}
+      >{`useSearch(data, {fields: ["id", "status"]})`}</Typography>
       <Search onChange={onChangeKeyword} />
       <List>
         {searchedData.map((i) => (

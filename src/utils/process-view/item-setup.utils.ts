@@ -46,7 +46,11 @@ export const transform = (
   return {
     type: PropertyGroupType.TRANSFORM,
     label: "transform",
-    values: initPropertyValues(defaultValues, overrides, omit) as TransformValues,
+    values: initPropertyValues(
+      defaultValues,
+      overrides,
+      omit
+    ) as TransformValues,
   };
 };
 
@@ -62,7 +66,11 @@ export const geometry = (
   return {
     type: PropertyGroupType.GEOMETRY,
     label: "geometry",
-    values: initPropertyValues(defaultValues, overrides, omit) as GeometryValues,
+    values: initPropertyValues(
+      defaultValues,
+      overrides,
+      omit
+    ) as GeometryValues,
   };
 };
 
@@ -122,5 +130,5 @@ export const group = <V>(label: string, values: V) => {
     type: PropertyGroupType.GROUP,
     label,
     values,
-  }
+  };
 };

@@ -12,7 +12,8 @@ const DialogContainer = () => {
     <Box>
       {listDialog.map((dialog) => {
         const Component = dialog.component;
-        const Comp = typeof Component === "function" ? <Component /> : Component;
+        const Comp =
+          typeof Component === "function" ? <Component /> : Component;
 
         return (
           <RndDialog

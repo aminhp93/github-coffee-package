@@ -14,9 +14,8 @@ export const POINT_CONTEXT_MENU_DEFAULT = {
 
 const SearchTemplate = () => {
   const [openContextMenu, setOpenContextMenu] = React.useState<boolean>(false);
-  const [pointContextMenu, setPointContextMenu] = React.useState<PointContextMenu>(
-    POINT_CONTEXT_MENU_DEFAULT
-  );
+  const [pointContextMenu, setPointContextMenu] =
+    React.useState<PointContextMenu>(POINT_CONTEXT_MENU_DEFAULT);
 
   const handleContextMenu = (event: React.MouseEvent<HTMLElement>) => {
     event.preventDefault(); // prevent the default behavior when right clicked

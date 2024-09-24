@@ -11,7 +11,7 @@ export const getTagIdFromTopic = (topic: string): string => {
 
 export const makeTopicFromTagId = (
   tagId: string,
-  prefix: string = DATA_POINT_TOPIC_PREFIX,
+  prefix: string = DATA_POINT_TOPIC_PREFIX
 ): string => {
   return prefix + "/set/datapoint/" + tagId;
 };

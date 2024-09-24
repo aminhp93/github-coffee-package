@@ -1,5 +1,10 @@
 import React, { ReactNode } from "react";
-import { Button as MuiButton, ButtonProps, Tooltip, TooltipProps } from "@mui/material";
+import {
+  Button as MuiButton,
+  ButtonProps,
+  Tooltip,
+  TooltipProps,
+} from "@mui/material";
 
 const IconButtonWithTooltip = ({
   tooltipProps,

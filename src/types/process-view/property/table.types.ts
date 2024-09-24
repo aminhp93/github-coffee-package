@@ -8,4 +8,7 @@ export type TableValues = {
   };
 };
 
-export type TableProperties = FixedPropertyGroup<typeof PropertyGroupType.GROUP, TableValues>;
+export type TableProperties = FixedPropertyGroup<
+  typeof PropertyGroupType.GROUP,
+  TableValues
+>;

@@ -25,13 +25,18 @@ type CustomdatePickerProps = {
   format?: string;
 };
 
-const CustomDateTimePicker = ({ format: formatProps }: CustomdatePickerProps) => {
+const CustomDateTimePicker = ({
+  format: formatProps,
+}: CustomdatePickerProps) => {
   const format =
     formatProps ??
     `${LIST_DATE_TIME_FORMAT["mm/dd/yyyy"]?.default} ${LIST_DATE_TIME_FORMAT["24-hour"]?.default}`;
   const { t } = useTranslation();
   const [open, setOpen] = useState(false);
-  const [selectedDateRange, setSelectedDateRange] = useState<DateRange<Dayjs>>([dayjs(), dayjs()]);
+  const [selectedDateRange, setSelectedDateRange] = useState<DateRange<Dayjs>>([
+    dayjs(),
+    dayjs(),
+  ]);
   const [timeOption, setTimeOption] = useState<string | null>(null);
 
   const handleClickAway = () => {
@@ -71,7 +76,9 @@ const CustomDateTimePicker = ({ format: formatProps }: CustomdatePickerProps) =>
           {selectedDateRange[0] === null && selectedDateRange[1] === null
             ? "click me"
             : `${selectedDateRange[0]?.format(format)} - ${
-                selectedDateRange[1] !== null ? selectedDateRange[1].format(format) : format
+                selectedDateRange[1] !== null
+                  ? selectedDateRange[1].format(format)
+                  : format
               }`}
         </Box>
         {open && (

@@ -1,5 +1,13 @@
 // Import mui & libaries
-import { Box, BoxProps, Button, ButtonGroup, IconButton, styled, useTheme } from "@mui/material";
+import {
+  Box,
+  BoxProps,
+  Button,
+  ButtonGroup,
+  IconButton,
+  styled,
+  useTheme,
+} from "@mui/material";
 import React, { ReactNode, useRef, useState } from "react";
 import { Rnd } from "react-rnd";
 
@@ -83,14 +91,23 @@ const RndDialog = ({
   const initYPositionDialog = (currentHeightWindow - defaultDialog.height) / 2;
 
   const [isDragging, setIsDragging] = useState<boolean>(false);
-  const [size, setSize] = useState({ width: defaultDialog.width, height: defaultDialog.height });
-  const [position, setPosition] = useState({ x: initXPositionDialog, y: initYPositionDialog });
+  const [size, setSize] = useState({
+    width: defaultDialog.width,
+    height: defaultDialog.height,
+  });
+  const [position, setPosition] = useState({
+    x: initXPositionDialog,
+    y: initYPositionDialog,
+  });
   const [currentStateDialog, setCurrentStateDialog] = useState({
     isMinimize: false,
     isMaximize: false,
   });
   const [openConfirmClose, setOpenConfirmClose] = useState(false);
-  const preSize = useRef({ width: defaultDialog.width, height: defaultDialog.height });
+  const preSize = useRef({
+    width: defaultDialog.width,
+    height: defaultDialog.height,
+  });
 
   const closeDialog = useDialogsStore((state) => state.closeDialog);
   const bringToFront = useDialogsStore((state) => state.bringToFront);
@@ -161,10 +178,10 @@ const RndDialog = ({
         bounds="window"
         minHeight={minHeight}
         minWidth={minWidth}
-        onDragStop={(e, d) => {
+        onDragStop={(_, d) => {
           setPosition({ x: d.x, y: d.y });
         }}
-        onResize={(e, direction, ref) => {
+        onResize={(_, __, ref) => {
           setSize({ width: ref.offsetWidth, height: ref.offsetHeight });
         }}
       >
@@ -183,13 +200,29 @@ const RndDialog = ({
           <ButtonGroup>
             {!hideControlButton && (
               <>
-                <IconButton onClick={currentStateDialog.isMinimize ? onExpand : onMinimize}>
-                  {currentStateDialog.isMinimize ? <OpenInFullIcon /> : <MinimizeIcon />}
+                <IconButton
+                  onClick={
+                    currentStateDialog.isMinimize ? onExpand : onMinimize
+                  }
+                >
+                  {currentStateDialog.isMinimize ? (
+                    <OpenInFullIcon />
+                  ) : (
+                    <MinimizeIcon />
+                  )}
                 </IconButton>
                 <IconButton
-                  onClick={currentStateDialog.isMaximize ? onCloseFullScreen : onOpenFullScreen}
+                  onClick={
+                    currentStateDialog.isMaximize
+                      ? onCloseFullScreen
+                      : onOpenFullScreen
+                  }
                 >
-                  {currentStateDialog.isMaximize ? <CloseFullscreenIcon /> : <CropSquareIcon />}
+                  {currentStateDialog.isMaximize ? (
+                    <CloseFullscreenIcon />
+                  ) : (
+                    <CropSquareIcon />
+                  )}
                 </IconButton>
               </>
             )}

@@ -8,8 +8,8 @@ export type EventData = {
   [EventType.TAG_DIALOG]: {
     onTagsSelected: (tags: Tag[]) => void;
     onCancel?: () => void;
-  },
+  };
   [EventType.EXPAND_ALL_PROPERTIES]: {
     expanded: boolean;
-  }
+  };
 };

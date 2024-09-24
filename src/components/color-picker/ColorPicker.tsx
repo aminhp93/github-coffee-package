@@ -88,7 +88,7 @@ const ColorPicker = ({
   };
 
   const handleRevert = () => {
-    onRevert && onRevert();
+    onRevert?.();
     handleClose();
   };
 
@@ -102,8 +102,21 @@ const ColorPicker = ({
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <line x1="1.35355" y1="0.646447" x2="19.3536" y2="18.6464" stroke="#F44336" />
-        <rect x="0.5" y="0.5" width="19" height="19" rx="1.5" stroke="#E0E0E0" />
+        <line
+          x1="1.35355"
+          y1="0.646447"
+          x2="19.3536"
+          y2="18.6464"
+          stroke="#F44336"
+        />
+        <rect
+          x="0.5"
+          y="0.5"
+          width="19"
+          height="19"
+          rx="1.5"
+          stroke="#E0E0E0"
+        />
       </svg>
       {/* <TransparentColorImg /> */}
     </Box>
@@ -140,7 +153,11 @@ const ColorPicker = ({
       )}
 
       {variant === "button" && (
-        <StyledBoxButtonContainer ref={ref} onClick={handleClick} bgColor={value} />
+        <StyledBoxButtonContainer
+          ref={ref}
+          onClick={handleClick}
+          bgColor={value}
+        />
       )}
       <Popover
         open={isOpenColorPicker}
@@ -163,14 +180,16 @@ const ColorPicker = ({
             const alpha = Math.floor(color.rgb.a ? color.rgb.a * 100 : 100);
             const hexColor = color.hex;
 
-            const hexColorWithTransparency = alpha < 100 ? `${hexColor}${alpha}` : hexColor;
+            const hexColorWithTransparency =
+              alpha < 100 ? `${hexColor}${alpha}` : hexColor;
             setColor(hexColorWithTransparency);
           }}
           onChange={(color: ColorResult) => {
             const alpha = Math.floor(color.rgb.a ? color.rgb.a * 100 : 100);
             const hexColor = color.hex;
 
-            const hexColorWithTransparency = alpha < 100 ? `${hexColor}${alpha}` : hexColor;
+            const hexColorWithTransparency =
+              alpha < 100 ? `${hexColor}${alpha}` : hexColor;
             setColor(hexColorWithTransparency);
 
             onChange(hexColorWithTransparency);

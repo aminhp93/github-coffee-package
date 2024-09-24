@@ -9,4 +9,7 @@ export type StyleValues = {
   borderRadius: number;
 };
 
-export type StyleProperties = FixedPropertyGroup<typeof PropertyGroupType.STYLE, StyleValues>;
+export type StyleProperties = FixedPropertyGroup<
+  typeof PropertyGroupType.STYLE,
+  StyleValues
+>;

@@ -5,4 +5,4 @@ export { SystemTreePath } from "./system-tree-path";
 export * from "./constants";
 export * from "./utils";
 export * from "./types";
-export { NodeModel, TreeMethods };
+export type { NodeModel, TreeMethods };

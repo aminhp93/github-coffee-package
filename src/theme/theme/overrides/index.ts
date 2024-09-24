@@ -24,7 +24,17 @@ const Overrides = (theme: Theme) => {
   const tabs = MuiTabs();
   const textField = MuiTextField(theme);
 
-  return Object.assign(button, tooltip, input, chip, typography, form, dataGrid, tabs, textField);
+  return Object.assign(
+    button,
+    tooltip,
+    input,
+    chip,
+    typography,
+    form,
+    dataGrid,
+    tabs,
+    textField
+  );
 };
 
 export default Overrides;

@@ -44,7 +44,12 @@ const DialogFooter = ({
     switch (type) {
       case DialogFooterType.DELETE:
         return (
-          <Button variant="contained" startIcon={<Delete />} color="error" onClick={onAction}>
+          <Button
+            variant="contained"
+            startIcon={<Delete />}
+            color="error"
+            onClick={onAction}
+          >
             {customFooter?.titleAction ?? "delete"}
           </Button>
         );
@@ -62,14 +67,19 @@ const DialogFooter = ({
     return <></>;
   }
 
-  const extendedComponent = Object.keys(customFooter?.component || {}).map((key) => {
-    const component = customFooter?.component?.[key] as React.JSX.Element;
-    if (customFooter?.componentProps?.[key]) {
-      return React.cloneElement(component, { ...customFooter?.componentProps?.[key], key });
-    } else {
-      return React.cloneElement(component, { key });
+  const extendedComponent = Object.keys(customFooter?.component || {}).map(
+    (key) => {
+      const component = customFooter?.component?.[key] as React.JSX.Element;
+      if (customFooter?.componentProps?.[key]) {
+        return React.cloneElement(component, {
+          ...customFooter?.componentProps?.[key],
+          key,
+        });
+      } else {
+        return React.cloneElement(component, { key });
+      }
     }
-  });
+  );
 
   return (
     <StyledBoxActionDialog>

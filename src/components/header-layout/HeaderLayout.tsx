@@ -39,7 +39,7 @@ const HeaderLayout = (props: HeaderLayoutProps) => {
             variant="scrollable"
             scrollButtons="auto"
             aria-label="scrollable auto tabs example"
-            onChange={(event, newValue) => setSelectedInfo(newValue)}
+            onChange={(_, newValue) => setSelectedInfo(newValue)}
             sx={{
               "& .MuiButtonBase-root.MuiTab-root": {
                 // Custom styles here
@@ -49,7 +49,9 @@ const HeaderLayout = (props: HeaderLayoutProps) => {
             }}
           >
             {props.infoList.map((info) => {
-              return <Tab label={info.label} key={info.value} value={info.value} />;
+              return (
+                <Tab label={info.label} key={info.value} value={info.value} />
+              );
             })}
           </Tabs>
         </Box>
@@ -84,7 +86,10 @@ const HeaderLayout = (props: HeaderLayoutProps) => {
   };
 
   const renderDetailAction = () => {
-    if (showDetailAction && (props.detailActionNode || props.customToolbarNode)) {
+    if (
+      showDetailAction &&
+      (props.detailActionNode || props.customToolbarNode)
+    ) {
       return (
         <Box
           sx={{
@@ -104,7 +109,9 @@ const HeaderLayout = (props: HeaderLayoutProps) => {
               {props.detailActionNode}
             </StyledBoxInfo>
           )}
-          {props.customToolbarNode && <StyledBoxAction>{props.customToolbarNode}</StyledBoxAction>}
+          {props.customToolbarNode && (
+            <StyledBoxAction>{props.customToolbarNode}</StyledBoxAction>
+          )}
         </Box>
       );
     }
@@ -162,16 +169,27 @@ interface HeaderLayoutContextType {
 }
 
 // Create the context with a default undefined value
-const HeaderLayoutContext = createContext<HeaderLayoutContextType | undefined>(undefined);
+const HeaderLayoutContext = createContext<HeaderLayoutContextType | undefined>(
+  undefined
+);
 
 // Create a provider component
-export const HeaderLayoutProvider = ({ children }: { children: React.ReactNode }) => {
+export const HeaderLayoutProvider = ({
+  children,
+}: {
+  children: React.ReactNode;
+}) => {
   const [selectedInfo, setSelectedInfo] = useState<string>("");
   const [showDetailAction, setShowDetailAction] = useState<boolean>(false);
 
   return (
     <HeaderLayoutContext.Provider
-      value={{ selectedInfo, setSelectedInfo, showDetailAction, setShowDetailAction }}
+      value={{
+        selectedInfo,
+        setSelectedInfo,
+        showDetailAction,
+        setShowDetailAction,
+      }}
     >
       {children}
     </HeaderLayoutContext.Provider>
@@ -182,7 +200,9 @@ export const HeaderLayoutProvider = ({ children }: { children: React.ReactNode }
 export const useHeaderLayout = () => {
   const context = useContext(HeaderLayoutContext);
   if (context === undefined) {
-    throw new Error("useHeaderLayout must be used within a HeaderLayoutProvider");
+    throw new Error(
+      "useHeaderLayout must be used within a HeaderLayoutProvider"
+    );
   }
   return context;
 };

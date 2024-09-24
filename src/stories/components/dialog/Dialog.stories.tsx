@@ -1,5 +1,8 @@
 import React from "react";
-import { Dialog as DialogComp, DialogFooterType } from "../../../components/dialog";
+import {
+  Dialog as DialogComp,
+  DialogFooterType,
+} from "../../../components/dialog";
 import PlaygroundDialogTemplate from "./PlaygroundDialogTemplate";
 import * as argTypes from "./Dialog.types";
 

@@ -12,9 +12,12 @@ import {
 const TagUrl = {
   listTags: (controllerId: string) => `/tags/${controllerId}`,
   createTag: (controllerId: string) => `/tags/${controllerId}`,
-  readTag: (controllerId: string, tagId: string) => `/tags/${controllerId}/${tagId}`,
-  updateTag: (controllerId: string, tagId: string) => `/tags/${controllerId}/${tagId}`,
-  deleteTag: (controllerId: string, tagId: string) => `/tags/${controllerId}/${tagId}`,
+  readTag: (controllerId: string, tagId: string) =>
+    `/tags/${controllerId}/${tagId}`,
+  updateTag: (controllerId: string, tagId: string) =>
+    `/tags/${controllerId}/${tagId}`,
+  deleteTag: (controllerId: string, tagId: string) =>
+    `/tags/${controllerId}/${tagId}`,
   listTagComponents: (controllerId: string, tagId: string) =>
     `/tags/${controllerId}/${tagId}/components`,
   addTagComponent: (controllerId: string, tagId: string) =>
@@ -30,7 +33,10 @@ export const TagService = {
       url: TagUrl.listTags(controllerId),
     });
   },
-  createTag: (controllerId: string, data: CreateTagRequest): Promise<CreateTagResponse> => {
+  createTag: (
+    controllerId: string,
+    data: CreateTagRequest
+  ): Promise<CreateTagResponse> => {
     return httpService({
       method: "POST",
       url: TagUrl.createTag(controllerId),
@@ -54,7 +60,10 @@ export const TagService = {
       data,
     });
   },
-  deleteTag: (controllerId: string, tagId: string): Promise<DeleteTagResponse> => {
+  deleteTag: (
+    controllerId: string,
+    tagId: string
+  ): Promise<DeleteTagResponse> => {
     return httpService({
       method: "DELETE",
       url: TagUrl.deleteTag(controllerId, tagId),

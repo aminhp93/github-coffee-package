@@ -1,15 +1,18 @@
 type RoundOptions = {
-  direction?: 'up' | 'down';
+  direction?: "up" | "down";
   decimalPlaces?: number;
 };
 
-export function roundFloatingNumber(num: number, options: RoundOptions = { direction: 'up', decimalPlaces: 0 }): number {
-  const { direction = 'up', decimalPlaces = 0 } = options;
+export function roundFloatingNumber(
+  num: number,
+  options: RoundOptions = { direction: "up", decimalPlaces: 0 }
+): number {
+  const { direction = "up", decimalPlaces = 0 } = options;
   const factor = Math.pow(10, decimalPlaces);
-  
-  if (direction === 'up') {
-      return Math.ceil(num * factor) / factor;
+
+  if (direction === "up") {
+    return Math.ceil(num * factor) / factor;
   } else {
-      return Math.floor(num * factor) / factor;
+    return Math.floor(num * factor) / factor;
   }
 }

@@ -1,5 +1,10 @@
 import React from "react";
-import { ListItem, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
+import {
+  ListItem,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+} from "@mui/material";
 import { styled } from "../../../theme";
 import { useTranslation } from "../../../utils/translation";
 import { TreeOption, TreeOptionType } from "../types";

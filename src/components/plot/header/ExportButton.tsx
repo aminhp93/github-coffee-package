@@ -29,7 +29,11 @@ const ExportButton = ({ onExport }: Props) => {
   return (
     <>
       <Tooltip title={t("_plot.exportButton.export")}>
-        <IconButton role="ExportBtn" onClick={handleClick} sx={{ maxHeight: "40px" }}>
+        <IconButton
+          role="ExportBtn"
+          onClick={handleClick}
+          sx={{ maxHeight: "40px" }}
+        >
           <FileDownload />
         </IconButton>
       </Tooltip>

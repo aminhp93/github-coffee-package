@@ -2,8 +2,7 @@ import httpService from "../instance";
 import { ItemTheme } from "./Themes.schema";
 
 const ThemesUrl = {
-  listThemes: (controllerId: string) =>
-    `/themes/${controllerId}`,
+  listThemes: (controllerId: string) => `/themes/${controllerId}`,
 };
 
 export const ThemesService = {
