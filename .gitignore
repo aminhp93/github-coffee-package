@@ -54,3 +54,5 @@ Thumbs.db
 
 # SBOM
 sbom.json
+
+*storybook.log

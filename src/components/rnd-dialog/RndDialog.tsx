@@ -161,10 +161,10 @@ const RndDialog = ({
         bounds="window"
         minHeight={minHeight}
         minWidth={minWidth}
-        onDragStop={(_, d) => {
+        onDragStop={(e, d) => {
           setPosition({ x: d.x, y: d.y });
         }}
-        onResize={(_, __, ref) => {
+        onResize={(e, direction, ref) => {
           setSize({ width: ref.offsetWidth, height: ref.offsetHeight });
         }}
       >

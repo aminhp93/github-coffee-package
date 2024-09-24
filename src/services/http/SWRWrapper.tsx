@@ -8,5 +8,4 @@ const SWRWrapper = ({
   <SWRConfig value={config}>{children}</SWRConfig>
 );
 
-export { SWRWrapper, useSwr, useSWRConfig };
-export type { SWRConfiguration}
+export { SWRWrapper, useSwr, useSWRConfig, SWRConfiguration };

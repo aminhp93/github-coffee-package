@@ -39,7 +39,7 @@ const HeaderLayout = (props: HeaderLayoutProps) => {
             variant="scrollable"
             scrollButtons="auto"
             aria-label="scrollable auto tabs example"
-            onChange={(_, newValue) => setSelectedInfo(newValue)}
+            onChange={(event, newValue) => setSelectedInfo(newValue)}
             sx={{
               "& .MuiButtonBase-root.MuiTab-root": {
                 // Custom styles here

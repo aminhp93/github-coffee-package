@@ -49,5 +49,4 @@ i18n
     },
   });
 
-export { i18n, useTranslation };
-export type { TFunction };
+export { i18n, useTranslation, TFunction };

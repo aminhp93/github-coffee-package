@@ -48,11 +48,11 @@ const CustomLayout = (props: Props) => {
   const [range, setRange] = useState<Range>(LIST_START_TIME_FRAME(t)[0]);
   const [checkWholeDay, setCheckWholeDay] = useState(true);
 
-  const handleChange = (_: React.SyntheticEvent, newValue: number) => {
+  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
 
-  const handleChangeRange = (_: React.SyntheticEvent, newValue: Range | null) => {
+  const handleChangeRange = (event: React.SyntheticEvent, newValue: Range | null) => {
     if (!newValue) return;
     setRange(newValue);
     props.onChangeTimeConfig?.({
@@ -60,7 +60,7 @@ const CustomLayout = (props: Props) => {
       value: newValue,
     });
   };
-  const handleChangeCheckWholeDay = (_: React.SyntheticEvent, value: boolean) => {
+  const handleChangeCheckWholeDay = (event: React.SyntheticEvent, value: boolean) => {
     setCheckWholeDay(value);
   };
 

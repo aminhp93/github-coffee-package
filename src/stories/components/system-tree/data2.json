@@ -1,0 +1,333 @@
+[
+  {
+    "id": "private",
+    "parent": 0,
+    "droppable": true,
+    "text": "private",
+    "data": {
+      "type": "private"
+    }
+  },
+  {
+    "id": "1028efd0-d424-49f5-9168-5453d0efed4e",
+    "parent": "e0049c8c-50db-4f73-a58e-bb57d5e62925",
+    "droppable": false,
+    "text": "Subsystem",
+    "data": {
+      "type": "folder",
+      "addButton": {
+        "show": true,
+        "options": [
+          {
+            "type": "addFolder",
+            "text": "addFolder",
+            "nodeId": "1028efd0-d424-49f5-9168-5453d0efed4e"
+          },
+          {
+            "type": "addView",
+            "text": "addView",
+            "nodeId": "1028efd0-d424-49f5-9168-5453d0efed4e"
+          }
+        ]
+      },
+      "moreActionsButton": {
+        "show": true,
+        "options": [
+          {
+            "type": "rename",
+            "text": "rename",
+            "nodeId": "1028efd0-d424-49f5-9168-5453d0efed4e"
+          },
+          {
+            "type": "settings",
+            "text": "settings",
+            "nodeId": "1028efd0-d424-49f5-9168-5453d0efed4e"
+          },
+          {
+            "type": "remove",
+            "text": "remove",
+            "nodeId": "1028efd0-d424-49f5-9168-5453d0efed4e"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "3e72d65a-d9cb-464e-b4d0-1a975b4b105d",
+    "parent": 0,
+    "droppable": true,
+    "text": "Network",
+    "data": {
+      "type": "network"
+    }
+  },
+  {
+    "id": "98cfcd00-bbbd-4d94-930f-3d1d6cfea281",
+    "parent": "a2ace485-8111-48a5-b3ea-65b04d65c6a4",
+    "droppable": false,
+    "text": "folder_mp_1_edit_2",
+    "data": {
+      "type": "folder",
+      "addButton": {
+        "show": true,
+        "options": [
+          {
+            "type": "addFolder",
+            "text": "addFolder",
+            "nodeId": "98cfcd00-bbbd-4d94-930f-3d1d6cfea281"
+          },
+          {
+            "type": "addView",
+            "text": "addView",
+            "nodeId": "98cfcd00-bbbd-4d94-930f-3d1d6cfea281"
+          }
+        ]
+      },
+      "moreActionsButton": {
+        "show": true,
+        "options": [
+          {
+            "type": "rename",
+            "text": "rename",
+            "nodeId": "98cfcd00-bbbd-4d94-930f-3d1d6cfea281"
+          },
+          {
+            "type": "settings",
+            "text": "settings",
+            "nodeId": "98cfcd00-bbbd-4d94-930f-3d1d6cfea281"
+          },
+          {
+            "type": "remove",
+            "text": "remove",
+            "nodeId": "98cfcd00-bbbd-4d94-930f-3d1d6cfea281"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "a2ace485-8111-48a5-b3ea-65b04d65c6a4",
+    "parent": "3e72d65a-d9cb-464e-b4d0-1a975b4b105d",
+    "droppable": true,
+    "text": "Controller",
+    "data": {
+      "type": "controller",
+      "addButton": {
+        "show": true,
+        "options": [
+          {
+            "type": "addFolder",
+            "text": "addFolder",
+            "nodeId": "a2ace485-8111-48a5-b3ea-65b04d65c6a4"
+          }
+        ]
+      },
+      "moreActionsButton": {
+        "show": true,
+        "options": [
+          {
+            "type": "rename",
+            "text": "rename",
+            "nodeId": "a2ace485-8111-48a5-b3ea-65b04d65c6a4"
+          },
+          {
+            "type": "addFolder",
+            "text": "addFolder",
+            "nodeId": "a2ace485-8111-48a5-b3ea-65b04d65c6a4"
+          },
+          {
+            "type": "backup",
+            "text": "backupRestore",
+            "nodeId": "a2ace485-8111-48a5-b3ea-65b04d65c6a4"
+          },
+          {
+            "type": "tunnelSetting",
+            "text": "tunnelSettings",
+            "nodeId": "a2ace485-8111-48a5-b3ea-65b04d65c6a4"
+          },
+          {
+            "type": "networkSettings",
+            "text": "networkSettings",
+            "nodeId": "a2ace485-8111-48a5-b3ea-65b04d65c6a4"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "bc4df5c5-0c6c-4617-ad45-3eb009a54ff3",
+    "parent": "a2ace485-8111-48a5-b3ea-65b04d65c6a4",
+    "droppable": false,
+    "text": "co ten",
+    "data": {
+      "type": "folder",
+      "addButton": {
+        "show": true,
+        "options": [
+          {
+            "type": "addFolder",
+            "text": "addFolder",
+            "nodeId": "bc4df5c5-0c6c-4617-ad45-3eb009a54ff3"
+          },
+          {
+            "type": "addView",
+            "text": "addView",
+            "nodeId": "bc4df5c5-0c6c-4617-ad45-3eb009a54ff3"
+          }
+        ]
+      },
+      "moreActionsButton": {
+        "show": true,
+        "options": [
+          {
+            "type": "rename",
+            "text": "rename",
+            "nodeId": "bc4df5c5-0c6c-4617-ad45-3eb009a54ff3"
+          },
+          {
+            "type": "settings",
+            "text": "settings",
+            "nodeId": "bc4df5c5-0c6c-4617-ad45-3eb009a54ff3"
+          },
+          {
+            "type": "remove",
+            "text": "remove",
+            "nodeId": "bc4df5c5-0c6c-4617-ad45-3eb009a54ff3"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "d558b4e1-6976-431e-b75a-7ddddb9bddc3",
+    "parent": "a2ace485-8111-48a5-b3ea-65b04d65c6a4",
+    "droppable": false,
+    "text": "minh_1",
+    "data": {
+      "type": "folder",
+      "addButton": {
+        "show": true,
+        "options": [
+          {
+            "type": "addFolder",
+            "text": "addFolder",
+            "nodeId": "d558b4e1-6976-431e-b75a-7ddddb9bddc3"
+          },
+          {
+            "type": "addView",
+            "text": "addView",
+            "nodeId": "d558b4e1-6976-431e-b75a-7ddddb9bddc3"
+          }
+        ]
+      },
+      "moreActionsButton": {
+        "show": true,
+        "options": [
+          {
+            "type": "rename",
+            "text": "rename",
+            "nodeId": "d558b4e1-6976-431e-b75a-7ddddb9bddc3"
+          },
+          {
+            "type": "settings",
+            "text": "settings",
+            "nodeId": "d558b4e1-6976-431e-b75a-7ddddb9bddc3"
+          },
+          {
+            "type": "remove",
+            "text": "remove",
+            "nodeId": "d558b4e1-6976-431e-b75a-7ddddb9bddc3"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "e0049c8c-50db-4f73-a58e-bb57d5e62925",
+    "parent": "a2ace485-8111-48a5-b3ea-65b04d65c6a4",
+    "droppable": true,
+    "text": "System",
+    "data": {
+      "type": "folder",
+      "addButton": {
+        "show": true,
+        "options": [
+          {
+            "type": "addFolder",
+            "text": "addFolder",
+            "nodeId": "e0049c8c-50db-4f73-a58e-bb57d5e62925"
+          },
+          {
+            "type": "addView",
+            "text": "addView",
+            "nodeId": "e0049c8c-50db-4f73-a58e-bb57d5e62925"
+          }
+        ]
+      },
+      "moreActionsButton": {
+        "show": true,
+        "options": [
+          {
+            "type": "rename",
+            "text": "rename",
+            "nodeId": "e0049c8c-50db-4f73-a58e-bb57d5e62925"
+          },
+          {
+            "type": "settings",
+            "text": "settings",
+            "nodeId": "e0049c8c-50db-4f73-a58e-bb57d5e62925"
+          },
+          {
+            "type": "remove",
+            "text": "remove",
+            "nodeId": "e0049c8c-50db-4f73-a58e-bb57d5e62925"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "ebe41196-dbcc-4db1-a7b4-a362b3aec8e5",
+    "parent": "a2ace485-8111-48a5-b3ea-65b04d65c6a4",
+    "droppable": false,
+    "text": "hiep test",
+    "data": {
+      "type": "folder",
+      "addButton": {
+        "show": true,
+        "options": [
+          {
+            "type": "addFolder",
+            "text": "addFolder",
+            "nodeId": "ebe41196-dbcc-4db1-a7b4-a362b3aec8e5"
+          },
+          {
+            "type": "addView",
+            "text": "addView",
+            "nodeId": "ebe41196-dbcc-4db1-a7b4-a362b3aec8e5"
+          }
+        ]
+      },
+      "moreActionsButton": {
+        "show": true,
+        "options": [
+          {
+            "type": "rename",
+            "text": "rename",
+            "nodeId": "ebe41196-dbcc-4db1-a7b4-a362b3aec8e5"
+          },
+          {
+            "type": "settings",
+            "text": "settings",
+            "nodeId": "ebe41196-dbcc-4db1-a7b4-a362b3aec8e5"
+          },
+          {
+            "type": "remove",
+            "text": "remove",
+            "nodeId": "ebe41196-dbcc-4db1-a7b4-a362b3aec8e5"
+          }
+        ]
+      }
+    }
+  }
+]
