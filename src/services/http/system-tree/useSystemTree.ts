@@ -11,9 +11,12 @@ import { log } from "../../../utils/logger";
 
 export const useSystemTree = () => {
   const { controllerId } = useNetwork();
-  const [systemTree, setSystemTree] = useState<SystemNode[] | undefined>(undefined);
-  const { data, mutate, isLoading, isValidating } = useSWR("/system-tree-list", () =>
-    SystemTreeServices.listNodes(controllerId)
+  const [systemTree, setSystemTree] = useState<SystemNode[] | undefined>(
+    undefined
+  );
+  const { data, mutate, isLoading, isValidating } = useSWR(
+    "/system-tree-list",
+    () => SystemTreeServices.listNodes(controllerId)
   );
 
   useEffect(() => {

@@ -1,5 +1,8 @@
 import React, { ReactNode } from "react";
-import { TextPosition, TextValues } from "../../types/process-view/property/text.types";
+import {
+  TextPosition,
+  TextValues,
+} from "../../types/process-view/property/text.types";
 import { Box, BoxProps, SxProps, Theme, styled } from "@mui/material";
 
 type Props = {

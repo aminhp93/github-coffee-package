@@ -9,4 +9,7 @@ export type GeometryValues = {
   maxHeight: number;
 };
 
-export type GeometryProperties = FixedPropertyGroup<typeof PropertyGroupType.GEOMETRY, GeometryValues>;
+export type GeometryProperties = FixedPropertyGroup<
+  typeof PropertyGroupType.GEOMETRY,
+  GeometryValues
+>;

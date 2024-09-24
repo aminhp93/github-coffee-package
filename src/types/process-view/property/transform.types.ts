@@ -1,6 +1,15 @@
 import { FixedPropertyGroup, PropertyGroupType } from ".";
 
-export type TransformAnchor = "lt" | "lc" | "lb" | "ct" | "cc" | "cb" | "rt" | "rc" | "rb";
+export type TransformAnchor =
+  | "lt"
+  | "lc"
+  | "lb"
+  | "ct"
+  | "cc"
+  | "cb"
+  | "rt"
+  | "rc"
+  | "rb";
 
 export type TransformValues = {
   anchor: TransformAnchor;
@@ -11,4 +20,7 @@ export type TransformValues = {
   rotation: number;
 };
 
-export type TransformProperties = FixedPropertyGroup<typeof PropertyGroupType.TRANSFORM, TransformValues>;
+export type TransformProperties = FixedPropertyGroup<
+  typeof PropertyGroupType.TRANSFORM,
+  TransformValues
+>;

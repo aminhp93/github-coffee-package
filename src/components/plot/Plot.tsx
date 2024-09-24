@@ -71,7 +71,10 @@ const Plot = ({
               point: {
                 events: {
                   mouseOver: function () {
-                    options.series && setHoverPoints(getDataHover(options.series, this.x));
+                    if (options.series) {
+                      setHoverPoints(getDataHover(options.series, this.x));
+                    }
+
                     // // Highlight the hovered series
                     // const hoveredYAxisIndex = this.series.yAxis.options.id;
                     // this.series.chart.yAxis.forEach((yAxis) => {
@@ -116,10 +119,14 @@ const Plot = ({
       if (listYAxis.every((yAxis) => yAxis.options.id?.includes("_enum"))) {
         const yAxisTickAmounts = listYAxis
           .map((yAxis) => yAxis.options.tickAmount)
-          .filter((tickAmount): tickAmount is number => tickAmount !== undefined);
+          .filter(
+            (tickAmount): tickAmount is number => tickAmount !== undefined
+          );
         const maxTickAmount = Math.max(...yAxisTickAmounts);
 
-        const yAxis = listYAxis.find((yAxis) => yAxis.options.tickAmount === maxTickAmount);
+        const yAxis = listYAxis.find(
+          (yAxis) => yAxis.options.tickAmount === maxTickAmount
+        );
         if (yAxis) {
           yAxis.update({
             gridLineWidth: 1,
@@ -135,7 +142,10 @@ const Plot = ({
 
   const renderChart = useCallback(() => {
     return (
-      <StyledBoxContainer key="chart-toolbar" sx={{ width: "100%", height: "100%" }}>
+      <StyledBoxContainer
+        key="chart-toolbar"
+        sx={{ width: "100%", height: "100%" }}
+      >
         {showToolbar && (
           <ChartHeader
             dataType={dataType}

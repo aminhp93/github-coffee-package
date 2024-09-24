@@ -1,6 +1,9 @@
 import React from "react";
 import { Button } from "@mui/material";
-import { NotificationProvider, useSnackbar } from "../../../components/notification";
+import {
+  NotificationProvider,
+  useSnackbar,
+} from "../../../components/notification";
 
 const NotificationTemplate = () => {
   return (
@@ -16,7 +19,9 @@ const NotificationConsumer = () => {
   return (
     <Button
       variant="outlined"
-      onClick={() => enqueueSnackbar({ message: "Notification!", variant: "default" })}
+      onClick={() =>
+        enqueueSnackbar({ message: "Notification!", variant: "default" })
+      }
     >
       {`Click me!`}
     </Button>

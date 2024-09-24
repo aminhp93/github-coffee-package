@@ -85,7 +85,10 @@ const ASSET_FOLDER: { [key: string]: AssetFolderConfig } = {
   },
 };
 
-const isHiddenFeature = (feature?: string, features?: { [key: string]: boolean }): boolean => {
+const isHiddenFeature = (
+  feature?: string,
+  features?: { [key: string]: boolean }
+): boolean => {
   if (!feature || !features) {
     return false;
   }
@@ -103,7 +106,10 @@ export const createAssetsStructure = (
   first = false;
   assetsMap.forEach((setup, id) => {
     const component = setup.component;
-    if (!component?.itemSetup || isHiddenFeature(component.itemSetup.requiredFeature, features)) {
+    if (
+      !component?.itemSetup ||
+      isHiddenFeature(component.itemSetup.requiredFeature, features)
+    ) {
       return;
     }
     const { image, icon = "add" } = component.itemSetup;
@@ -127,7 +133,10 @@ export const createAssetsStructure = (
   }[] = [];
   for (const key of Object.keys(ASSET_FOLDER)) {
     const folder = ASSET_FOLDER[key];
-    if (folder.content.length === 0 || isHiddenFeature(folder.requiredFeature, features)) {
+    if (
+      folder.content.length === 0 ||
+      isHiddenFeature(folder.requiredFeature, features)
+    ) {
       continue;
     }
     result.push(folder);
@@ -136,7 +145,8 @@ export const createAssetsStructure = (
   return result;
 };
 
-const normalizeName = (name: string) => name.replace(/\.\//, "").replace(/\.js$/, "");
+const normalizeName = (name: string) =>
+  name.replace(/\.\//, "").replace(/\.js$/, "");
 
 type Context = ReturnType<typeof require.context>;
 
@@ -150,7 +160,13 @@ export const cacheItems = (cache: Map<string, CachedItem>, items: Context) => {
     const dir = normal.split("/");
     dir.pop();
 
-    const { key: itemKey, name, config, icon, image } = component.itemSetup as ItemSetup;
+    const {
+      key: itemKey,
+      name,
+      config,
+      icon,
+      image,
+    } = component.itemSetup as ItemSetup;
 
     cache.set(itemKey, {
       key: itemKey,

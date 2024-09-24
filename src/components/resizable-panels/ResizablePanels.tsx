@@ -35,13 +35,17 @@ const ResizablePanels = ({
         <>
           <Panel
             key={index}
-            defaultSize={defaultSizes ? defaultSizes[index] : DEFAULT_SIZES_PANEL}
+            defaultSize={
+              defaultSizes ? defaultSizes[index] : DEFAULT_SIZES_PANEL
+            }
             maxSize={size?.[index]?.maxSize}
             minSize={size?.[index]?.minSize}
           >
             {panel}
           </Panel>
-          {panels.length - 1 !== index && <StyedPanelResizeHandle direction={direction} />}
+          {panels.length - 1 !== index && (
+            <StyedPanelResizeHandle direction={direction} />
+          )}
         </>
       ))}
     </PanelGroup>

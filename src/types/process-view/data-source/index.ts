@@ -20,6 +20,12 @@ export type ItemDataValueAndConfig = {
   config?: any;
 };
 
-export type ItemDataSources<K extends string = string> = Record<K, ItemDataSrcConfig>;
+export type ItemDataSources<K extends string = string> = Record<
+  K,
+  ItemDataSrcConfig
+>;
 
-export type ItemData<K extends string = string> = Record<K, ItemDataValueAndConfig>;
+export type ItemData<K extends string = string> = Record<
+  K,
+  ItemDataValueAndConfig
+>;

@@ -8,7 +8,11 @@ import themeColorLight from "./light.palette";
 import themeExtendedDark from "./dark.extendedColor";
 import themeExtendedLight from "./light.extendedColors";
 
-const DefaultPalette = (mode: PaletteMode, skin: Skin, themeColor: ThemeColor) => {
+const DefaultPalette = (
+  mode: PaletteMode,
+  skin: Skin,
+  themeColor: ThemeColor
+) => {
   // ** Vars
   // const whiteColor = "255,255,255";
   // const blackColor = "0,0,0";

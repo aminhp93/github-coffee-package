@@ -30,7 +30,11 @@ const CopyButton = ({ copyContent, edge }: PropsCopyButton) => {
 
   return (
     <Tooltip arrow open={isTooltipOpen} title={t("copied")}>
-      <IconButton onClick={handleClick} onMouseDown={handleMouseDown} edge={edge}>
+      <IconButton
+        onClick={handleClick}
+        onMouseDown={handleMouseDown}
+        edge={edge}
+      >
         <CopyToClipboard text={copyContent}>
           <ContentCopy />
         </CopyToClipboard>

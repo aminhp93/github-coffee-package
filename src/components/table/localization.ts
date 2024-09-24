@@ -23,7 +23,9 @@ export const getTableLocalization = (t: TFunction) => {
     toolbarExportCSV: t("_table.toolbarExportCSV"),
     toolbarExportPrint: t("_table.toolbarExportPrint"),
     columnsPanelTextFieldLabel: t("_table.columnsPanelTextFieldLabel"),
-    columnsPanelTextFieldPlaceholder: t("_table.columnsPanelTextFieldPlaceholder"),
+    columnsPanelTextFieldPlaceholder: t(
+      "_table.columnsPanelTextFieldPlaceholder"
+    ),
     columnsPanelDragIconLabel: t("_table.columnsPanelDragIconLabel"),
     columnsPanelShowAllButton: t("_table.columnsPanelShowAllButton"),
     columnsPanelHideAllButton: t("_table.columnsPanelHideAllButton"),
@@ -63,13 +65,19 @@ export const getTableLocalization = (t: TFunction) => {
       t("_table.columnHeaderFiltersTooltipActive", { count }),
     columnHeaderFiltersLabel: t("_table.columnHeaderFiltersLabel"),
     columnHeaderSortIconLabel: t("_table.columnHeaderSortIconLabel"),
-    footerRowSelected: (count: number): string => t("_table.footerRowSelected", { count }),
+    footerRowSelected: (count: number): string =>
+      t("_table.footerRowSelected", { count }),
     footerTotalRows: t("_table.footerTotalRows"),
-    footerTotalVisibleRows: (visibleCount: number, totalCount: number): string =>
+    footerTotalVisibleRows: (
+      visibleCount: number,
+      totalCount: number
+    ): string =>
       t("_table.footerTotalVisibleRows", { visibleCount, totalCount }),
     checkboxSelectionHeaderName: t("_table.checkboxSelectionHeaderName"),
     checkboxSelectionSelectAllRows: t("_table.checkboxSelectionSelectAllRows"),
-    checkboxSelectionUnselectAllRows: t("_table.checkboxSelectionUnselectAllRows"),
+    checkboxSelectionUnselectAllRows: t(
+      "_table.checkboxSelectionUnselectAllRows"
+    ),
     checkboxSelectionSelectRow: t("_table.checkboxSelectionSelectRow"),
     checkboxSelectionUnselectRow: t("_table.checkboxSelectionUnselectRow"),
     booleanCellTrueLabel: t("_table.booleanCellTrueLabel"),
@@ -83,7 +91,8 @@ export const getTableLocalization = (t: TFunction) => {
     treeDataCollapse: t("_table.treeDataCollapse"),
     groupingColumnHeaderName: t("_table.groupingColumnHeaderName"),
     groupColumn: (name: string): string => t("_table.groupColumn", { name }),
-    unGroupColumn: (name: string): string => t("_table.unGroupColumn", { name }),
+    unGroupColumn: (name: string): string =>
+      t("_table.unGroupColumn", { name }),
     expandDetailPanel: t("_table.expandDetailPanel"),
     collapseDetailPanel: t("_table.collapseDetailPanel"),
     rowReorderingHeaderName: t("_table.rowReorderingHeaderName"),

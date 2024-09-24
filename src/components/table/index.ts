@@ -20,18 +20,21 @@ export * from "./Table";
 export * from "./components/CustomGridToolbar";
 export {
   useGridApiRef,
+  GridActionsCellItem,
+  GridRowModes,
+  GridRowEditStopReasons,
+};
+
+export type {
   GridColDef,
   GridRowSelectionModel,
-  GridActionsCellItem,
   GridRowId,
   GridEventListener,
   GridRowParams,
   MuiEvent,
   GridRenderCellParams,
   GridRowModesModel,
-  GridRowModes,
   GridRowsProp,
   GridRowModel,
-  GridRowEditStopReasons,
   GridRowOrderChangeParams,
 };

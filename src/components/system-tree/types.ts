@@ -1,5 +1,10 @@
 // Import libraries
-import { NodeModel, TreeProps, DropOptions, NodeRender } from "@minoru/react-dnd-treeview";
+import {
+  NodeModel,
+  TreeProps,
+  DropOptions,
+  NodeRender,
+} from "@minoru/react-dnd-treeview";
 import React from "react";
 
 // Import local files
@@ -86,7 +91,9 @@ export type CustomNodeProps = {
   hideCheckbox?: boolean;
   setAnchorEl?: React.Dispatch<React.SetStateAction<HTMLElement | null>>;
   setOptionMenu: React.Dispatch<React.SetStateAction<OptionMenu | undefined>>;
-  setClickedActionsButton: React.Dispatch<React.SetStateAction<NodeId | undefined>>;
+  setClickedActionsButton: React.Dispatch<
+    React.SetStateAction<NodeId | undefined>
+  >;
   fixActionsButton: boolean;
   hideActionButton?: boolean;
 };

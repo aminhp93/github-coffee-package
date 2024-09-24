@@ -47,7 +47,9 @@ const DATE_TIME_FORMAT: {
 };
 
 export function useDateFormat() {
-  const initialFormat = JSON.parse(localStorage.getItem("DATE_TIME_FORMAT") ?? "{}");
+  const initialFormat = JSON.parse(
+    localStorage.getItem("DATE_TIME_FORMAT") ?? "{}"
+  );
 
   const [format, setFormat] = useState<{
     startOfWeek: StartOfWeek;

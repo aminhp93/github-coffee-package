@@ -1,7 +1,9 @@
 import { TFunction } from "i18next";
 import { Range } from "./types";
 
-export const LIST_START_TIME_FRAME = (t: TFunction<"translation", undefined>): Range[] => {
+export const LIST_START_TIME_FRAME = (
+  t: TFunction<"translation", undefined>
+): Range[] => {
   return [
     {
       value: "last_15_mins",
@@ -132,7 +134,9 @@ export const LIST_START_TIME_FRAME = (t: TFunction<"translation", undefined>): R
   ];
 };
 
-export const LIST_END_TIME_FRAME = (t: TFunction<"translation", undefined>): Range[] => {
+export const LIST_END_TIME_FRAME = (
+  t: TFunction<"translation", undefined>
+): Range[] => {
   return [
     {
       value: "next_15_mins",

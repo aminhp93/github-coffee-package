@@ -23,7 +23,12 @@ import {
   isParentIndeterminate,
   getParentIdsByNodeId,
 } from "./utils";
-import { StyledBoxContainer, StyledBoxContent, StyledBoxHeader, StyledTypography } from "./styles";
+import {
+  StyledBoxContainer,
+  StyledBoxContent,
+  StyledBoxHeader,
+  StyledTypography,
+} from "./styles";
 import { styled } from "../../theme";
 
 const SystemTreeComponent = (
@@ -51,7 +56,9 @@ const SystemTreeComponent = (
   const [treeData, setTreeData] = useState<NodeModel[]>(tree);
   const [selectedNodes, setSelectedNodes] = useState<NodeId[]>([]);
   const [clickedNodeId, setClickedNodeId] = useState<NodeId | undefined>();
-  const [clickedActionsButton, setClickedActionsButton] = useState<NodeId | undefined>();
+  const [clickedActionsButton, setClickedActionsButton] = useState<
+    NodeId | undefined
+  >();
   const [optionMenu, setOptionMenu] = useState<OptionMenu>();
 
   const open = Boolean(anchorNodeEl);
@@ -89,14 +96,21 @@ const SystemTreeComponent = (
     const { dragSource } = options;
     const selectedNodesSet = new Set(selectedNodes);
     if (dragSource && !selectedNodesSet.has(dragSource.id)) {
-      const oldParentChildrenIds = getDirectChildrenIds(dragSource.parent, newTree);
+      const oldParentChildrenIds = getDirectChildrenIds(
+        dragSource.parent,
+        newTree
+      );
       const oldParentIsChecked = oldParentChildrenIds.every((childId) =>
         selectedNodesSet.has(childId)
       );
 
       if (oldParentIsChecked) {
-        const oldParentNode = newTree.find((treeNode) => treeNode.id === dragSource.parent);
-        oldParentNode && handleSelect(oldParentNode);
+        const oldParentNode = newTree.find(
+          (treeNode) => treeNode.id === dragSource.parent
+        );
+        if (oldParentNode) {
+          handleSelect(oldParentNode);
+        }
       }
     }
     onDropNode?.(newTree, options);
@@ -115,7 +129,14 @@ const SystemTreeComponent = (
       // check all children nodes and every parent node that has all its children checked
       const willBeChecked = [...childrenIds];
       parentIds.forEach((parentId) => {
-        if (areAllChildrenChecked(parentId, willBeChecked, treeData, selectedNodes)) {
+        if (
+          areAllChildrenChecked(
+            parentId,
+            willBeChecked,
+            treeData,
+            selectedNodes
+          )
+        ) {
           willBeChecked.push(parentId);
         }
       });
@@ -172,14 +193,26 @@ const SystemTreeComponent = (
                 if (!disableDragAndDrop) {
                   return false;
                 }
+                return true;
               }}
               tree={treeData}
               // @ts-expect-error TODO: fix this
-              render={(node: NodeModel<CustomData>, { depth, isOpen, onToggle }) => {
-                const isSelected = !!selectedNodes.find((nodeId) => nodeId === node.id);
-                const isIndeterminate = isParentIndeterminate(node, treeData, selectedNodes);
+              render={(
+                node: NodeModel<CustomData>,
+                { depth, isOpen, onToggle }
+              ) => {
+                const isSelected = !!selectedNodes.find(
+                  (nodeId) => nodeId === node.id
+                );
+                const isIndeterminate = isParentIndeterminate(
+                  node,
+                  treeData,
+                  selectedNodes
+                );
                 const isClickedNode = clickedNodeId === node.id;
-                const showActionsButton = Boolean(clickedActionsButton === node.id && anchorNodeEl);
+                const showActionsButton = Boolean(
+                  clickedActionsButton === node.id && anchorNodeEl
+                );
                 return (
                   <CustomNode
                     node={node}
@@ -200,9 +233,9 @@ const SystemTreeComponent = (
                 );
               }}
               // @ts-expect-error TODO: fix this
-              dragPreviewRender={(monitorProps: DragLayerMonitorProps<CustomData>) => (
-                <CustomDragPreview monitorProps={monitorProps} />
-              )}
+              dragPreviewRender={(
+                monitorProps: DragLayerMonitorProps<CustomData>
+              ) => <CustomDragPreview monitorProps={monitorProps} />}
               onDrop={handleDrop}
               rootProps={{
                 onClick: handleClear,

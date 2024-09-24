@@ -45,7 +45,11 @@ const columns: GridColDef[] = [
     headerName: "Text with icon",
     width: 130,
     renderCell: (params) => (
-      <Button variant={params.row.variant} color={params.row.color} startIcon={<Close />}>
+      <Button
+        variant={params.row.variant}
+        color={params.row.color}
+        startIcon={<Close />}
+      >
         {`Label`}
       </Button>
     ),
@@ -55,7 +59,12 @@ const columns: GridColDef[] = [
     headerName: "Disable Text with icon",
     width: 130,
     renderCell: (params) => (
-      <Button variant={params.row.variant} color={params.row.color} startIcon={<Close />} disabled>
+      <Button
+        variant={params.row.variant}
+        color={params.row.color}
+        startIcon={<Close />}
+        disabled
+      >
         {`Label`}
       </Button>
     ),
@@ -65,20 +74,28 @@ const columns: GridColDef[] = [
     headerName: "Toggle Button with Text and Icon",
     width: 130,
     renderCell: (params) => (
-      <ToggleButtonComp color={params.row.color} text="Label" icon={<Close />} />
+      <ToggleButtonComp
+        color={params.row.color}
+        text="Label"
+        icon={<Close />}
+      />
     ),
   },
   {
     field: "toggleButtonWithIcon",
     headerName: "Toggle Button with Icon",
     width: 130,
-    renderCell: (params) => <ToggleButtonComp color={params.row.color} icon={<Close />} />,
+    renderCell: (params) => (
+      <ToggleButtonComp color={params.row.color} icon={<Close />} />
+    ),
   },
   {
     field: "toggleButtonWithText",
     headerName: "Toggle Button with Text",
     width: 130,
-    renderCell: (params) => <ToggleButtonComp color={params.row.color} text="Label" />,
+    renderCell: (params) => (
+      <ToggleButtonComp color={params.row.color} text="Label" />
+    ),
   },
   {
     field: "iconNoBorder",
@@ -136,7 +153,12 @@ const columns: GridColDef[] = [
     headerName: "Loading Button",
     width: 130,
     renderCell: (params) => (
-      <LoadingButton loading={true} variant={params.row.variant} color={params.row.color} disabled>
+      <LoadingButton
+        loading={true}
+        variant={params.row.variant}
+        color={params.row.color}
+        disabled
+      >
         <span>{`disabled`}</span>
       </LoadingButton>
     ),
@@ -177,7 +199,10 @@ const ToggleButtonComp = ({
 }) => {
   const [alignment, setAlignment] = React.useState("web");
 
-  const handleChange = (event: React.MouseEvent<HTMLElement>, newAlignment: string) => {
+  const handleChange = (
+    _: React.MouseEvent<HTMLElement>,
+    newAlignment: string
+  ) => {
     setAlignment(newAlignment);
   };
 

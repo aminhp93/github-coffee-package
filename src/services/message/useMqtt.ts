@@ -24,7 +24,7 @@ export type Subscription = {
 /**
  * hook for realtime messages, using mqtt
  * @param onMessageCb "on message" callback, should be wrapped with useCallback
- * 
+ *
  */
 const useMqtt = <T>(onMessageCb?: (topic: string, data: T) => void) => {
   const client = useMqttStore((state) => state.client);

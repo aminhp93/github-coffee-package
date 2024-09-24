@@ -1,5 +1,18 @@
-import { AspectRatio, MoreVert, Refresh, Timeline, TableChart } from "@mui/icons-material";
-import { Box, IconButton, Stack, ToggleButton, ToggleButtonGroup, styled } from "@mui/material";
+import {
+  AspectRatio,
+  MoreVert,
+  Refresh,
+  Timeline,
+  TableChart,
+} from "@mui/icons-material";
+import {
+  Box,
+  IconButton,
+  Stack,
+  ToggleButton,
+  ToggleButtonGroup,
+  styled,
+} from "@mui/material";
 import React from "react";
 import { CustomDateTimePicker, PlotType, ToolbarProps } from "../../..";
 // import { TimeConfig } from "../../date-time-picker/types";
@@ -74,7 +87,12 @@ const ChartHeader = ({
       <Stack spacing={1.5} direction="row" alignItems="center">
         <>{extendedComponent}</>
 
-        <StyledToggleButtonGroup value={dataType} exclusive onChange={handlePlotType} size="small">
+        <StyledToggleButtonGroup
+          value={dataType}
+          exclusive
+          onChange={handlePlotType}
+          size="small"
+        >
           <ToggleButton value={PlotDataType.CHART}>
             <Timeline />
           </ToggleButton>
@@ -123,5 +141,7 @@ const StyledToggleButtonGroup = styled(ToggleButtonGroup)(({ theme }) => ({
       backgroundColor: theme.palette.extendedColors.primary.lightBackground,
     },
   },
-  "& button:hover": { backgroundColor: theme.palette.extendedColors.primary.lightBackground },
+  "& button:hover": {
+    backgroundColor: theme.palette.extendedColors.primary.lightBackground,
+  },
 }));

@@ -30,7 +30,11 @@ const ButtonTemplate = () => {
           </Grid>
 
           <Grid item>
-            <LoadingButton loading={false} loadingPosition="start" startIcon={<Save />}>
+            <LoadingButton
+              loading={false}
+              loadingPosition="start"
+              startIcon={<Save />}
+            >
               <span>{`Save`}</span>
             </LoadingButton>
           </Grid>

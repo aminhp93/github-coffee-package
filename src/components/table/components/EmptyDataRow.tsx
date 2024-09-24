@@ -6,7 +6,11 @@ import { useTranslation } from "../../../utils/translation";
 const EmptyDataRow = () => {
   const { t } = useTranslation();
 
-  return <StyledBoxEmptyViewContainer>{t("emptyDataRow")}</StyledBoxEmptyViewContainer>;
+  return (
+    <StyledBoxEmptyViewContainer>
+      {t("emptyDataRow")}
+    </StyledBoxEmptyViewContainer>
+  );
 };
 
 export { EmptyDataRow };

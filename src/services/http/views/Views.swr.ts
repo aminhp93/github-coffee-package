@@ -16,7 +16,10 @@ import { ViewsService } from "./Views.services";
 import { useNetwork } from "../../../hooks/useNetwork";
 import { errorLog } from "../../../utils/logger";
 
-export const useListViews = (type: ViewsType = "process-view", config?: SWRConfiguration) => {
+export const useListViews = (
+  type: ViewsType = "process-view",
+  config?: SWRConfiguration
+) => {
   const { controllerId } = useNetwork();
   const { data, ...others } = useSWR(
     `list-views/filter=${type}`,
@@ -43,7 +46,10 @@ export const useListViews = (type: ViewsType = "process-view", config?: SWRConfi
 /**
  * fetch view data
  */
-export const useReadView = (viewId: string | undefined, config?: SWRConfiguration) => {
+export const useReadView = (
+  viewId: string | undefined,
+  config?: SWRConfiguration
+) => {
   const { controllerId } = useNetwork();
   const { data, ...others } = useSWR(
     viewId ? `view/${viewId}` : null,
@@ -85,6 +91,7 @@ export const useGetView = () => {
         return ReadViewResponseSchema.parse(res);
       } catch (error) {
         errorLog("Error while parsing data", error);
+        return undefined;
       }
     },
     [controllerId, mutate]
@@ -96,16 +103,26 @@ export const useUpdateView = () => {
   const { mutate } = useSWRConfig();
 
   return useCallback(
-    async (viewId: string, data: UpdateViewRequest, options?: MutatorOptions) => {
+    async (
+      viewId: string,
+      data: UpdateViewRequest,
+      options?: MutatorOptions
+    ) => {
       try {
         const res = await mutate(
           `view/${viewId}`,
-          () => ViewsService.updateView(controllerId, viewId, UpdateViewRequestSchema.parse(data)),
+          () =>
+            ViewsService.updateView(
+              controllerId,
+              viewId,
+              UpdateViewRequestSchema.parse(data)
+            ),
           options
         );
         return UpdateViewResponseSchema.parse(res);
       } catch (error) {
         errorLog("Error while parsing data", error);
+        return undefined;
       }
     },
     [controllerId, mutate]
@@ -121,12 +138,17 @@ export const useCreateView = () => {
       try {
         const res = await mutate(
           `create-view`,
-          () => ViewsService.createView(controllerId, CreateViewRequestSchema.parse(data)),
+          () =>
+            ViewsService.createView(
+              controllerId,
+              CreateViewRequestSchema.parse(data)
+            ),
           options
         );
         return CreateViewResponseSchema.parse(res);
       } catch (error) {
         errorLog("Error while parsing data", error);
+        return undefined;
       }
     },
     [controllerId, mutate]
@@ -148,6 +170,7 @@ export const useDeleteView = () => {
         return DeleteViewResponseSchema.parse(res);
       } catch (error) {
         errorLog("Error while parsing data", error);
+        return undefined;
       }
     },
     [controllerId, mutate]

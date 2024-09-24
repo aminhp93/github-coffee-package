@@ -21,9 +21,9 @@ import { log } from "../../utils/logger";
 
 const UseFormatDateTemplate = () => {
   const { format, changeFormat, formatDate } = useDateFormat();
-  const [displayDateFormat, setDisplayDateFormat] = React.useState<string | undefined>(
-    `${LIST_DATE_TIME_FORMAT[format.dateFormat]?.default}`
-  );
+  const [displayDateFormat, setDisplayDateFormat] = React.useState<
+    string | undefined
+  >(`${LIST_DATE_TIME_FORMAT[format.dateFormat]?.default}`);
   const [showTime, setShowTime] = React.useState<string>("on");
 
   const newDate = dayjs();
@@ -73,8 +73,16 @@ const UseFormatDateTemplate = () => {
             changeFormat({ timeFormat: e.target.value as TimeFormat });
           }}
         >
-          <FormControlLabel value="12-hour" control={<Radio />} label="12-hour" />
-          <FormControlLabel value="24-hour" control={<Radio />} label="24-hour" />
+          <FormControlLabel
+            value="12-hour"
+            control={<Radio />}
+            label="12-hour"
+          />
+          <FormControlLabel
+            value="24-hour"
+            control={<Radio />}
+            label="24-hour"
+          />
         </RadioGroup>
       </FormControl>
 
@@ -87,12 +95,25 @@ const UseFormatDateTemplate = () => {
           onChange={(e) => {
             changeFormat({ dateFormat: e.target.value as DateFormat });
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            setDisplayDateFormat(`${(LIST_DATE_TIME_FORMAT as any)[e.target.value]?.default}`);
+            const newData = `${(LIST_DATE_TIME_FORMAT as any)[e.target.value]?.default}`;
+            setDisplayDateFormat(newData);
           }}
         >
-          <FormControlLabel value="mm/dd/yyyy" control={<Radio />} label="mm/dd/yyyy" />
-          <FormControlLabel value="dd/mm/yyyy" control={<Radio />} label="dd/mm/yyyy" />
-          <FormControlLabel value="yyyy/mm/dd" control={<Radio />} label="yyyy/mm/dd" />
+          <FormControlLabel
+            value="mm/dd/yyyy"
+            control={<Radio />}
+            label="mm/dd/yyyy"
+          />
+          <FormControlLabel
+            value="dd/mm/yyyy"
+            control={<Radio />}
+            label="dd/mm/yyyy"
+          />
+          <FormControlLabel
+            value="yyyy/mm/dd"
+            control={<Radio />}
+            label="yyyy/mm/dd"
+          />
         </RadioGroup>
       </FormControl>
       <Divider />

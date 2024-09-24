@@ -37,7 +37,10 @@ const PlaygroundTableTemplate: StoryFn<TableProps> = (args) => {
 
   const [alignment, setAlignment] = React.useState("");
 
-  const handleChange = (event: React.MouseEvent<HTMLElement>, newAlignment: string) => {
+  const handleChange = (
+    _: React.MouseEvent<HTMLElement>,
+    newAlignment: string
+  ) => {
     setAlignment(newAlignment);
   };
 
@@ -117,7 +120,10 @@ export default WrapperPlaygroundTableTemplate;
 const TypeFilter = (props: SelectProps) => {
   return (
     <FormControl sx={{ width: 300 }}>
-      <InputLabel size="small" id="type-filter-label">{`Type Filter`}</InputLabel>
+      <InputLabel
+        size="small"
+        id="type-filter-label"
+      >{`Type Filter`}</InputLabel>
       <Select
         {...props}
         labelId="type-filter-label"

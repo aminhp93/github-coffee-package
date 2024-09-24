@@ -1,3 +1,4 @@
+import { errorLog } from "../utils/logger";
 import AppConfig from "../configs/app";
 
 /**
@@ -5,12 +6,14 @@ import AppConfig from "../configs/app";
  */
 export function useNetwork() {
   try {
-    const userStorageValue = window.localStorage.getItem(AppConfig.userDataKey) ?? "{}";
+    const userStorageValue =
+      window.localStorage.getItem(AppConfig.userDataKey) ?? "{}";
     const user = JSON.parse(userStorageValue);
     const controllerId = user.controllerId;
 
     return { controllerId };
   } catch (error) {
+    errorLog(error);
     return { controllerId: "" };
   }
 }

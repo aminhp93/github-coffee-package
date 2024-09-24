@@ -1,5 +1,11 @@
 import React from "react";
-import { Radio, RadioGroup, FormControl, FormControlLabel, FormLabel } from "@mui/material";
+import {
+  Radio,
+  RadioGroup,
+  FormControl,
+  FormControlLabel,
+  FormLabel,
+} from "@mui/material";
 import { i18n, useTranslation } from "../../../../utils/translation/i18n";
 
 const ButtonChangeLanguage = () => {

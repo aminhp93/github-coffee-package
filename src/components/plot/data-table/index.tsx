@@ -10,7 +10,9 @@ type Props = {
 const DataTable = ({ data }: Props) => {
   const { t } = useTranslation();
   const columns: GridColDef[] = useMemo(() => {
-    const columnsTable: GridColDef[] = [{ field: "time", headerName: t("time"), width: 150 }];
+    const columnsTable: GridColDef[] = [
+      { field: "time", headerName: t("time"), width: 150 },
+    ];
 
     data?.forEach((series) => {
       const type = series.type;

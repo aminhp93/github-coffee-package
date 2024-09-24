@@ -24,7 +24,9 @@ export function useSearch<T extends object = { [key: string]: unknown }>(
     const processedData = listData.filter((i) => {
       let compareString = "";
       if (options?.fields) {
-        options.fields.forEach((field) => (compareString += JSON.stringify(i[field])));
+        options.fields.forEach(
+          (field) => (compareString += JSON.stringify(i[field]))
+        );
       } else {
         compareString = JSON.stringify(Object.values(i));
       }

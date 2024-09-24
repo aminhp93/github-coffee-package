@@ -61,7 +61,6 @@ export type ItemThemeColor = keyof ItemThemeContent;
 
 export type ItemTheme = z.infer<typeof ItemThemeSchema>;
 
-
 type ThemeValues = {
   [K in keyof ItemThemeContent]: K;
 };
@@ -87,5 +86,5 @@ export const THEME_VALUES: ThemeValues = {
   outOfService: "outOfService",
   overridden: "overridden",
   inAlarm: "inAlarm",
-  fault: "fault"
+  fault: "fault",
 };

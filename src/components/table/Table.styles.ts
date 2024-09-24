@@ -10,9 +10,10 @@ export const StyledDataGridPremium = styled(DataGridPremium)(({ theme }) => ({
   [`& .${gridClasses.columnHeader}, & .${gridClasses.cell}`]: {
     outline: "transparent",
   },
-  [`& .${gridClasses.columnHeader}:focus-within, & .${gridClasses.cell}:focus-within`]: {
-    outline: "none",
-  },
+  [`& .${gridClasses.columnHeader}:focus-within, & .${gridClasses.cell}:focus-within`]:
+    {
+      outline: "none",
+    },
 
   "& .MuiDataGrid-cell": {
     color: theme.palette.text.primary,

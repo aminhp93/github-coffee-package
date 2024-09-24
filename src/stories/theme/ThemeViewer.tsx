@@ -4,7 +4,11 @@ import clsx from "clsx";
 import { styled, alpha, lighten } from "@mui/material/styles";
 import { Box } from "@mui/material";
 import { ExpandMore, ChevronRight } from "@mui/icons-material";
-import { TreeItem as MuiTreeItem, treeItemClasses, TreeView } from "@mui/x-tree-view";
+import {
+  TreeItem as MuiTreeItem,
+  treeItemClasses,
+  TreeView,
+} from "@mui/x-tree-view";
 import { v4 as uuidv4 } from "uuid";
 
 const blue = {
@@ -98,7 +102,10 @@ const Color = styled("span")(({ theme }) => ({
     'url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%202%202%22%3E%3Cpath%20d%3D%22M1%202V0h1v1H0v1z%22%20fill-opacity%3D%22.2%22%2F%3E%3C%2Fsvg%3E")',
 }));
 
-function ObjectEntryLabel(props: { readonly objectKey: string; readonly objectValue: any }) {
+function ObjectEntryLabel(props: {
+  readonly objectKey: string;
+  readonly objectValue: any;
+}) {
   const { objectKey, objectValue } = props;
   const type = getType(objectValue);
   const label = getLabel(objectValue, type);
@@ -172,7 +179,9 @@ function ObjectEntry(props: {
   return (
     <TreeItem
       nodeId={nodeId}
-      label={<ObjectEntryLabel objectKey={objectKey} objectValue={objectValue} />}
+      label={
+        <ObjectEntryLabel objectKey={objectKey} objectValue={objectValue} />
+      }
     >
       {children}
     </TreeItem>
@@ -180,10 +189,16 @@ function ObjectEntry(props: {
 }
 
 function computeNodeIds(object: Record<string, any>, prefix: string) {
-  if ((object !== null && typeof object === "object") || typeof object === "function") {
+  if (
+    (object !== null && typeof object === "object") ||
+    typeof object === "function"
+  ) {
     const ids: Array<string> = [];
     Object.keys(object).forEach((key) => {
-      ids.push(`${prefix}${key}`, ...computeNodeIds(object[key], `${prefix}${key}.`));
+      ids.push(
+        `${prefix}${key}`,
+        ...computeNodeIds(object[key], `${prefix}${key}.`)
+      );
     });
 
     return ids;

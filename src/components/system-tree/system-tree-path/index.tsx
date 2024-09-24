@@ -97,7 +97,9 @@ const SystemTreePath = ({
           }}
         >
           {startIcon && <IconButton>{startIcon}</IconButton>}
-          {currentPath && <Typography className="path">{currentPath}</Typography>}
+          {currentPath && (
+            <Typography className="path">{currentPath}</Typography>
+          )}
           {title}
         </Box>
         <Search />

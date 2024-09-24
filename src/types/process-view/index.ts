@@ -35,14 +35,23 @@ export type CachedItem<T = ItemConfig> = {
   dir: string[];
 };
 
-export type ItemSetup<T = ItemConfig> = Omit<CachedItem<T>, "component" | "dir"> & {
+export type ItemSetup<T = ItemConfig> = Omit<
+  CachedItem<T>,
+  "component" | "dir"
+> & {
   requiredFeature?: string;
 };
 
-const _ROLES = ["administrator", "powerUser", "maintenance", "user", "viewer"] as const;
+const _ROLES = [
+  "administrator",
+  "powerUser",
+  "maintenance",
+  "user",
+  "viewer",
+] as const;
 
 export const ROLES = [..._ROLES];
 
-export type Role = typeof _ROLES[number];
+export type Role = (typeof _ROLES)[number];
 
 export type ViewItemData = { locked?: boolean; config: ItemConfig };

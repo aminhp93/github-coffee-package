@@ -19,12 +19,17 @@ export const useCreateTag = () => {
       try {
         const res = await mutate(
           `create-tag`,
-          () => TagService.createTag(controllerId, CreateTagRequestSchema.parse(data)),
+          () =>
+            TagService.createTag(
+              controllerId,
+              CreateTagRequestSchema.parse(data)
+            ),
           options
         );
         return CreateTagResponseSchema.parse(res);
       } catch (error) {
         errorLog("Error while parsing data", error);
+        return undefined;
       }
     },
     [controllerId, mutate]
@@ -38,13 +43,19 @@ export const useDeleteTag = () => {
   const { mutate } = useSWRConfig();
 
   return (tagId: string, options?: MutatorOptions) =>
-    mutate(`delete-tag`, () => TagService.deleteTag(controllerId, tagId), options);
+    mutate(
+      `delete-tag`,
+      () => TagService.deleteTag(controllerId, tagId),
+      options
+    );
 };
 
 export const useListTags = () => {
   const { controllerId } = useNetwork();
 
-  const { data, ...others } = useSWR(`list-tags`, () => TagService.listTags(controllerId));
+  const { data, ...others } = useSWR(`list-tags`, () =>
+    TagService.listTags(controllerId)
+  );
 
   const parsedData = useMemo(() => {
     if (others.isLoading) return undefined;

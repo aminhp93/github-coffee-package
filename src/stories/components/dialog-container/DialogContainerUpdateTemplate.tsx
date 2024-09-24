@@ -1,7 +1,13 @@
 import { Box, Button } from "@mui/material";
 import React, { useEffect } from "react";
-import { FAKE_DATA, getDefaultOption } from "../../../components/plot/Plot.constants";
-import { getOptionsFromData, getValidatedOptions } from "../../../components/plot/Plot.utils";
+import {
+  FAKE_DATA,
+  getDefaultOption,
+} from "../../../components/plot/Plot.constants";
+import {
+  getOptionsFromData,
+  getValidatedOptions,
+} from "../../../components/plot/Plot.utils";
 import { useDialogsStore } from "../../../stores";
 import { Plot } from "../../../components";
 

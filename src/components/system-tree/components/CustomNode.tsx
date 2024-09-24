@@ -34,14 +34,20 @@ const CustomNode = (props: CustomNodeProps) => {
 
   const handleSelect = () => props.onSelect(props.node);
 
-  const handleClickButton = (e: React.MouseEvent<HTMLElement>, type: string) => {
+  const handleClickButton = (
+    e: React.MouseEvent<HTMLElement>,
+    type: string
+  ) => {
     e.stopPropagation();
     props.setAnchorEl?.(e.currentTarget);
     props.setClickedActionsButton(id);
 
     const options = {
       type,
-      options: type === "add" ? data?.addButton?.options : data?.moreActionsButton?.options,
+      options:
+        type === "add"
+          ? data?.addButton?.options
+          : data?.moreActionsButton?.options,
     };
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     props.setOptionMenu(options as any);
@@ -84,7 +90,9 @@ const CustomNode = (props: CustomNodeProps) => {
 
   const renderRightSide = () => {
     const showRightSide =
-      data?.addButton?.show ?? data?.moreActionsButton?.show ?? data?.descriptionText?.show;
+      data?.addButton?.show ??
+      data?.moreActionsButton?.show ??
+      data?.descriptionText?.show;
 
     if (!showRightSide) return <></>;
 
@@ -96,7 +104,10 @@ const CustomNode = (props: CustomNodeProps) => {
         }}
       >
         {!props.hideActionButton && (
-          <StyledBoxActionsGroup show={props.fixActionsButton} className="actions-group">
+          <StyledBoxActionsGroup
+            show={props.fixActionsButton}
+            className="actions-group"
+          >
             {data?.addButton?.show && (
               <IconButton
                 sx={{ mr: 1.5 }}
@@ -122,7 +133,9 @@ const CustomNode = (props: CustomNodeProps) => {
         {data?.descriptionText && (
           <Box>
             {data.descriptionText.show && (
-              <Typography variant="body2">{data.descriptionText.text}</Typography>
+              <Typography variant="body2">
+                {data.descriptionText.text}
+              </Typography>
             )}
           </Box>
         )}

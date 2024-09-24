@@ -24,7 +24,9 @@ export const PlaygroundChart = PlaygroundChartTemplate.bind({});
 export const MultipleLineChart = MultipleLineChartTemplate.bind({});
 export const DefaultChartWithTable = DefaultChartWithTableTemplate.bind({});
 export const DefaultChartWithToolbar = DefaultChartWithToolbarTemplate.bind({});
-export const MultipleSeriesNumberType = MultipleSeriesNumberTypeTemplate.bind({});
+export const MultipleSeriesNumberType = MultipleSeriesNumberTypeTemplate.bind(
+  {}
+);
 export const MultipleSeriesEnumType = MultipleSeriesEnumTypeTemplate.bind({});
 export const CustomChartWithToolbar = CustomChartWithToolbarTemplate.bind({});
 // export const MultipleSeriesMixType = MultipleSeriesMixTypeTemplate.bind({});

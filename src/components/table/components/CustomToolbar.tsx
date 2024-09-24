@@ -31,7 +31,10 @@ export function CustomToolbar(props: any) {
           >
             <GridToolbarColumnsButton
               ref={(ref) =>
-                ref && ref.childNodes.forEach((c) => c.nodeType === Node.TEXT_NODE && c.remove())
+                ref &&
+                ref.childNodes.forEach(
+                  (c) => c.nodeType === Node.TEXT_NODE && c.remove()
+                )
               }
               slotProps={{
                 button: { color: "secondary" },
@@ -39,7 +42,10 @@ export function CustomToolbar(props: any) {
             />
             <GridToolbarFilterButton
               ref={(ref) =>
-                ref && ref.childNodes.forEach((c) => c.nodeType === Node.TEXT_NODE && c.remove())
+                ref &&
+                ref.childNodes.forEach(
+                  (c) => c.nodeType === Node.TEXT_NODE && c.remove()
+                )
               }
               slotProps={{
                 button: { color: "secondary" },
@@ -47,7 +53,10 @@ export function CustomToolbar(props: any) {
             />
             <GridToolbarDensitySelector
               ref={(ref) =>
-                ref && ref.childNodes.forEach((c) => c.nodeType === Node.TEXT_NODE && c.remove())
+                ref &&
+                ref.childNodes.forEach(
+                  (c) => c.nodeType === Node.TEXT_NODE && c.remove()
+                )
               }
               slotProps={{
                 button: { color: "secondary" },
@@ -55,7 +64,10 @@ export function CustomToolbar(props: any) {
             />
             <GridToolbarExport
               ref={(ref) =>
-                ref && ref.childNodes.forEach((c) => c.nodeType === Node.TEXT_NODE && c.remove())
+                ref &&
+                ref.childNodes.forEach(
+                  (c) => c.nodeType === Node.TEXT_NODE && c.remove()
+                )
               }
               slotProps={{
                 button: { color: "secondary" },
