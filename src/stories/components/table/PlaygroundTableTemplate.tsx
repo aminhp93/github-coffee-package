@@ -15,13 +15,13 @@ import {
 import { StarBorder, AddReaction } from "@mui/icons-material";
 import { keyBy } from "lodash";
 
-import { Table, GridColDef, TableProps } from "../../../components/table";
-import { useTranslation } from "../../../utils/translation/i18n";
+import { Table, GridColDef, TableProps } from "@/components/table";
+import { useTranslation } from "@/utils/translation";
 import { fakeData, MEDIUM_COLUMNS, SMALL_COLUMNS } from "./Table.utils";
 import ButtonChangeLanguage from "./components/ButtonChangeLanguage";
-import { HeaderLayoutProvider } from "../../..";
-import { useFilterSelect, useIsMobile } from "../../../hooks";
-import { IconButtonWithTooltip } from "../../../components";
+import { HeaderLayoutProvider } from "@/components/header-layout";
+import { useFilterSelect, useIsMobile } from "@/hooks";
+import { IconButtonWithTooltip } from "@/components";
 
 const PlaygroundTableTemplate: StoryFn<TableProps> = (args) => {
   const smSize = useIsMobile();

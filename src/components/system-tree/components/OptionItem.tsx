@@ -5,8 +5,8 @@ import {
   ListItemIcon,
   ListItemText,
 } from "@mui/material";
-import { styled } from "../../../theme";
-import { useTranslation } from "../../../utils/translation";
+import { styled } from "@/theme";
+import { useTranslation } from "@/utils/translation";
 import { TreeOption, TreeOptionType } from "../types";
 import { ICON_MAPPING } from "../constants";
 

@@ -15,7 +15,7 @@ import {
   Table,
   IconButtonWithTooltip,
   GridColDef,
-} from "../../../components";
+} from "@/components";
 
 const columns: GridColDef[] = [
   { field: "color", headerName: "Color", width: 100 },

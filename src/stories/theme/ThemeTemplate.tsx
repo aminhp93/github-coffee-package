@@ -1,8 +1,8 @@
 import React from "react";
-import { useTheme, useSettings, styled } from "../../theme";
 import { FormGroup, FormControlLabel, Switch, Box } from "@mui/material";
 import ThemeViewer, { useNodeIdsLazy } from "./ThemeViewer";
-import { useTranslation } from "../../utils/translation";
+import { useTranslation } from "@/utils/translation";
+import { styled, useTheme, useSettings } from "@/theme";
 
 const ThemeTemplate = () => {
   const theme = useTheme();

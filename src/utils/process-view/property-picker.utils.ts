@@ -1,8 +1,4 @@
-import {
-  ItemDataSrcConfig,
-  PropertyPickerType,
-  TableValues,
-} from "../../types";
+import { ItemDataSrcConfig, PropertyPickerType, TableValues } from "@/types";
 
 export const color = (label = "Color", values?: string) => {
   return {

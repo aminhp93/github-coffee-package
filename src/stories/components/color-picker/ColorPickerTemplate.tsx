@@ -2,11 +2,8 @@
 import { Box } from "@mui/material";
 import { StoryFn } from "@storybook/react";
 import React from "react";
-import {
-  ColorPicker,
-  PropsColorPicker,
-} from "../../../components/color-picker";
-import { log } from "../../../utils/logger";
+import { ColorPicker, PropsColorPicker } from "@/components/color-picker";
+import { log } from "@/utils/logger";
 
 const Template: StoryFn<PropsColorPicker> = (args) => <ColorPicker {...args} />;
 

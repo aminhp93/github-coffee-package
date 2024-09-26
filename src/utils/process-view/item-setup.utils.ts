@@ -8,7 +8,7 @@ import {
   TextValues,
   TransformProperties,
   TransformValues,
-} from "../../types";
+} from "@/types";
 
 const initPropertyValues = (
   defaultValues: { [key: string]: unknown },

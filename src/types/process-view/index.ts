@@ -1,6 +1,6 @@
 import { CommonPropertyGroupKey, SetupConfig } from "./property";
 import { DataValue } from "./data-source";
-import { ItemTheme } from "../../services/http/themes/Themes.schema";
+import { ItemTheme } from "@/services/http/themes/Themes.schema";
 
 export * from "./data-source";
 export * from "./property";

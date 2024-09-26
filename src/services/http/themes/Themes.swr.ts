@@ -1,9 +1,9 @@
 import { useMemo } from "react";
 import useSWR, { SWRConfiguration } from "swr";
-import { useNetwork } from "../../../hooks/useNetwork";
+import { useNetwork } from "@/hooks/useNetwork";
 import { ThemesService } from "./Themes.services";
 import { ListItemThemeSchema } from "./Themes.schema";
-import { errorLog } from "../../../utils/logger";
+import { errorLog } from "@/utils/logger";
 
 export const useListThemes = (config?: SWRConfiguration) => {
   const { controllerId } = useNetwork();

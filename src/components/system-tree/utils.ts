@@ -1,6 +1,6 @@
 // Import libaries
 import { NodeModel } from "@minoru/react-dnd-treeview";
-import { NodeType, SystemNode } from "../../services";
+import { NodeType, SystemNode } from "@/services";
 
 // Import local files
 import { TreeOptionType, TreeOption, NodeId } from "./types";

@@ -1,4 +1,5 @@
-import { Box, BoxProps, styled } from "@mui/material";
+import { Box, BoxProps } from "@mui/material";
+import { styled } from "@/theme";
 
 import React, { useEffect } from "react";
 

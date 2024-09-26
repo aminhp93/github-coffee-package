@@ -12,9 +12,9 @@ import {
   ROW_HEIGHT,
   COLUMN_HEADER_HEIGHT,
   HIDE_HEADER,
-} from "../../../components/table/Table.constants";
+} from "@/components/table/Table.constants";
 import { Meta } from "@storybook/react";
-import { TableProps } from "../../../components/table";
+import { TableProps } from "@/components/table";
 import TableWidthActionColTemplate from "./TableWidthActionColTemplate";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export

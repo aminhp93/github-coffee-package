@@ -1,11 +1,12 @@
 // Import libraries
-import { Button, Stack, styled } from "@mui/material";
+import { Button, Stack } from "@mui/material";
 import React, { SetStateAction } from "react";
 
 // Import local files
 import { Dialog } from "../dialog/Dialog";
 import { ConfirmCloseProps } from "./RndDialog";
-import { useTranslation } from "../../utils/translation";
+import { useTranslation } from "@/utils/translation";
+import { styled } from "@/theme";
 
 type ConfirmCloseDialogProps = {
   open: boolean;

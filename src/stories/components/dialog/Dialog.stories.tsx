@@ -1,8 +1,5 @@
 import React from "react";
-import {
-  Dialog as DialogComp,
-  DialogFooterType,
-} from "../../../components/dialog";
+import { Dialog as DialogComp, DialogFooterType } from "@/components/dialog";
 import PlaygroundDialogTemplate from "./PlaygroundDialogTemplate";
 import * as argTypes from "./Dialog.types";
 
@@ -10,7 +7,7 @@ import * as argTypes from "./Dialog.types";
 import type { Meta } from "@storybook/react";
 import { Button, IconButton } from "@mui/material";
 import BluetoothIcon from "@mui/icons-material/Bluetooth";
-import { log } from "../../../utils/logger";
+import { log } from "@/utils/logger";
 
 export default {
   title: "Components/Dialog",

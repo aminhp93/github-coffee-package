@@ -6,7 +6,7 @@ import {
   DateTimePicker as MuiDateTimePicker,
   DateTimePickerProps,
 } from "@mui/x-date-pickers/DateTimePicker";
-import { dayjs } from "../..";
+import { dayjs } from "@/utils/formatter";
 
 const DateTimePicker = (props: DateTimePickerProps<dayjs.Dayjs>) => {
   return (

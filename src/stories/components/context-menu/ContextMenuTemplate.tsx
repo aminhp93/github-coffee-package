@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import React from "react";
-import { ContextMenu } from "../../../components/context-menu";
+import { ContextMenu } from "@/components/context-menu";
 
 type PointContextMenu = {
   x: number;

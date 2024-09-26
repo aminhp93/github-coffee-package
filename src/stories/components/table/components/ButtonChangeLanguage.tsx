@@ -6,7 +6,7 @@ import {
   FormControlLabel,
   FormLabel,
 } from "@mui/material";
-import { i18n, useTranslation } from "../../../../utils/translation/i18n";
+import { i18n, useTranslation } from "@/utils/translation/i18n";
 
 const ButtonChangeLanguage = () => {
   const { t } = useTranslation();

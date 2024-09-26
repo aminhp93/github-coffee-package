@@ -13,8 +13,8 @@ import {
   ViewsType,
 } from "./Views.schema";
 import { ViewsService } from "./Views.services";
-import { useNetwork } from "../../../hooks/useNetwork";
-import { errorLog } from "../../../utils/logger";
+import { useNetwork } from "@/hooks/useNetwork";
+import { errorLog } from "@/utils/logger";
 
 export const useListViews = (
   type: ViewsType = "process-view",

@@ -17,8 +17,8 @@ import { HoverPoints } from "../Plot";
 import LineSettings from "./LineSettings";
 import { PlotDataDetail } from "../Plot.types";
 import { ITypeChart } from "../Plot.constants";
-import { GridColDef, Table } from "../../table";
-import { ColorPicker } from "../../color-picker";
+import { GridColDef, Table } from "@/components/table";
+import { ColorPicker } from "@/components/color-picker";
 
 type Props = {
   hoverPoints?: HoverPoints;

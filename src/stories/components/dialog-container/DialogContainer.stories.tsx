@@ -1,7 +1,7 @@
 import type { Meta } from "@storybook/react";
 
 // import * as argTypes from "./Dialog.types";
-import { DialogContainer } from "../../../components";
+import { DialogContainer } from "@/components";
 import DialogContainerTemplate from "./DialogContainerTemplate";
 import DialogContainerUpdateTemplate from "./DialogContainerUpdateTemplate";
 import DialogConfirmCloseTemplate from "./DialogConfirmCloseTemplate";

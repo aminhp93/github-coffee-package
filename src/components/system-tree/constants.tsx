@@ -13,7 +13,7 @@ import React from "react";
 
 // Import local files
 import { TreeOptionType, TreeOption } from "./types";
-import { NodeType } from "../../services";
+import { NodeType } from "@/services";
 
 export const PRIVATE_FOLDER = "private";
 

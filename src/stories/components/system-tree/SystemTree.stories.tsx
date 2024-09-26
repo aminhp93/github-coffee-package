@@ -1,5 +1,5 @@
 import type { Meta } from "@storybook/react";
-import { SystemTree } from "../../../components/system-tree";
+import { SystemTree } from "@/components/system-tree";
 import * as argTypes from "./SystemTree.types";
 import DefaultSystemTreeTemplate from "./DefaultSystemTreeTemplate";
 import DefaultSystemTreeWithPathTemplate from "./DefaultSystemTreeWithPathTemplate";

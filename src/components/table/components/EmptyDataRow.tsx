@@ -1,7 +1,7 @@
 import React from "react";
 import { Box } from "@mui/material";
-import { styled } from "../../../theme";
-import { useTranslation } from "../../../utils/translation";
+import { styled } from "@/theme";
+import { useTranslation } from "@/utils/translation";
 
 const EmptyDataRow = () => {
   const { t } = useTranslation();

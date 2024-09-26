@@ -17,7 +17,7 @@
     "baseUrl": "./src",
     "lib": ["dom", "dom.iterable", "esnext"],
     "paths": {
-      "github-coffee-package/*": ["dist/*"]
+      "@/*": ["./*"]
     },
     "allowJs": true,
     "isolatedModules": true,

@@ -7,7 +7,7 @@ import {
   GridToolbarDensitySelector,
 } from "@mui/x-data-grid-premium";
 import React from "react";
-import { HeaderLayout } from "../../header-layout";
+import { HeaderLayout } from "@/components/header-layout";
 import { Box } from "@mui/material";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

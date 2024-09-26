@@ -1,7 +1,7 @@
 import { DEFAULT_CHART_COLOR, getDefaultOption } from "./Plot.constants";
 import { PlotDataDetail, Series } from "./Plot.types";
 import Highcharts, { SeriesOptionsType } from "highcharts/highstock";
-import { dayjs } from "../../utils/formatter/dayjs";
+import { dayjs } from "@/utils/formatter";
 import { HoverPoints } from "./Plot";
 
 export const SUFFIX_RANGE_SERIES = "_range";

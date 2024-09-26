@@ -5,8 +5,8 @@ import React from "react";
 import { ToggleButton } from "@mui/material";
 
 // Import local files
-import { useSearch } from "../../hooks";
-import { useTranslation } from "../../utils/translation/i18n";
+import { useSearch } from "@/hooks";
+import { useTranslation } from "@/utils/translation";
 import { HeaderLayoutProps, useHeaderLayout } from "../header-layout";
 import { Search } from "../search";
 import {

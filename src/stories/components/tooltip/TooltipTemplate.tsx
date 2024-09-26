@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Button } from "@mui/material";
-import { Tooltip } from "../../../components/tooltip";
-import { useTranslation } from "../../../utils/translation";
+import { Tooltip } from "@/components/tooltip";
+import { useTranslation } from "@/utils/translation";
 
 const TooltipTemplate = () => {
   const { t } = useTranslation();

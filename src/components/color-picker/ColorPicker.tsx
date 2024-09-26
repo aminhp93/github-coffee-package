@@ -7,13 +7,14 @@ import {
   PopoverOrigin,
   TextField,
   TextFieldProps,
-  styled,
 } from "@mui/material";
+
 import React, { useEffect, useRef, useState } from "react";
 import { ColorResult, SketchPicker } from "react-color";
 import { DEFAULT_COLORS, MIXED_VALUE } from "./constant";
 import { isTransparentColor, isValidColor } from "./utils";
 import { CopyButton } from "../copy-button/CopyButton";
+import { styled } from "@/theme";
 
 const COLOR_DEFAULT = "red";
 

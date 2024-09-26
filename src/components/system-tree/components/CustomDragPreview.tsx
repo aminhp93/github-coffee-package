@@ -6,7 +6,7 @@ import React from "react";
 // Import local files
 import { CustomData } from "../types";
 import TypeIcon from "./TypeIcon";
-import { styled } from "../../../theme";
+import { styled } from "@/theme";
 
 type Props = {
   monitorProps: DragLayerMonitorProps<CustomData>;

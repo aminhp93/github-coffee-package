@@ -94,10 +94,10 @@ export default defineConfig(
           "**/*.stories.ts+(|x)",
           "**/*.stories.js+(|x)",
           "setupTests.ts",
-          "vitest.config.ts",
         ],
       }),
     ],
+    external: (id) => /node_modules/.test(id),
   },
   {
     input: "dist/esm/types/src/index.d.ts",

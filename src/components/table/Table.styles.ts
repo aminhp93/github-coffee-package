@@ -1,4 +1,4 @@
-import { styled } from "@mui/material";
+import { styled } from "@/theme";
 import { DataGridPremium, gridClasses } from "@mui/x-data-grid-premium";
 
 // Import local files

@@ -1,6 +1,6 @@
 // ** Type Imports
 import { PaletteMode } from "@mui/material";
-import { Skin, ThemeColor } from "../../layouts/types";
+import { Skin, ThemeColor } from "@/theme/layouts/types";
 
 import themeColorDark from "./dark.palette";
 import themeColorLight from "./light.palette";

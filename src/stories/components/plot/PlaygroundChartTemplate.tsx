@@ -1,5 +1,5 @@
 import React from "react";
-import { PlotProps } from "../../../components/plot/Plot";
+import { PlotProps } from "@/components/plot/Plot";
 import { StoryFn } from "@storybook/react";
 import { Box } from "@mui/material";
 

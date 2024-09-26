@@ -1,5 +1,5 @@
 import { Box, Typography } from "@mui/material";
-import { styled } from "../../theme";
+import { styled } from "@/theme";
 
 export const StyledBoxContainer = styled(Box)(({ theme }) => ({
   overflow: "auto",

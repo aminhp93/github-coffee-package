@@ -1,8 +1,8 @@
 import { GridColDef } from "@mui/x-data-grid-premium";
 import Highcharts from "highcharts/highstock";
 import React, { useMemo } from "react";
-import { useTranslation } from "react-i18next";
-import { Table } from "../../table";
+import { useTranslation } from "@/utils/translation";
+import { Table } from "@/components/table";
 type Props = {
   data: Highcharts.Options["series"];
 };

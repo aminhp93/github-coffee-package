@@ -10,7 +10,7 @@ import { StaticDatePicker } from "@mui/x-date-pickers/StaticDatePicker";
 
 // Import local files
 import { TimeConfig } from "./types";
-import { dayjs } from "../../";
+import { dayjs } from "@/utils/formatter";
 import CustomLayout from "./components/CustomLayout";
 import CustomTextField from "./components/CustomTextField";
 

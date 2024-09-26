@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "@mui/material";
-import { useSettings } from "../../hooks/useSettings";
-import { useTranslation } from "../../../utils/translation/i18n";
+import { useSettings } from "@/theme";
+import { useTranslation } from "@/utils/translation";
 
 const ThemeToggleButton = () => {
   const { t } = useTranslation();

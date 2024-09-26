@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { create } from "zustand";
 import { devtools } from "zustand/middleware";
-import { ConfirmCloseProps, FooterProps } from "../../components/rnd-dialog";
-import { DialogFooterProps } from "../../components/dialog/DialogFooter";
+import { ConfirmCloseProps, FooterProps } from "@/components/rnd-dialog";
+import { DialogFooterProps } from "@/components/dialog/DialogFooter";
 
 type Dialog<T> = {
   idRef: string;

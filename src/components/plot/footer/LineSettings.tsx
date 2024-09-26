@@ -19,7 +19,7 @@ import {
 import React, { ChangeEvent, MouseEvent, ReactElement, useState } from "react";
 import { MenuItemContent } from "./MenuItemContent";
 import { ITypeChart } from "../Plot.constants";
-import { useTranslation } from "../../../utils/translation";
+import { useTranslation } from "@/utils/translation";
 export interface LineSettingsProps {
   cbRemove?: () => void;
   onChangeStepLine?: (state: boolean) => void;

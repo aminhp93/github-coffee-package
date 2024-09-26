@@ -1,12 +1,9 @@
 import React from "react";
-import {
-  FAKE_DATA,
-  getDefaultOption,
-} from "../../../components/plot/Plot.constants";
-import { getOptionsFromData } from "../../../components/plot/Plot.utils";
-import { Plot } from "../../../components/plot/Plot";
+import { FAKE_DATA, getDefaultOption } from "@/components/plot/Plot.constants";
+import { getOptionsFromData } from "@/components/plot/Plot.utils";
+import { Plot } from "@/components/plot/Plot";
 import { Box } from "@mui/material";
-import { HeaderLayoutProvider } from "../../../components/header-layout/HeaderLayout";
+import { HeaderLayoutProvider } from "@/components/header-layout/HeaderLayout";
 
 const DEFAULT_OPTION = {
   ...getDefaultOption(),

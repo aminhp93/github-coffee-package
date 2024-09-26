@@ -2,7 +2,7 @@ import HighchartsReact from "highcharts-react-official";
 import hcMore from "highcharts/highcharts-more";
 import Highcharts from "highcharts/highstock";
 
-import { Box, BoxProps, styled } from "@mui/material";
+import { Box, BoxProps } from "@mui/material";
 import ExportData from "highcharts/modules/export-data";
 import Exporting from "highcharts/modules/exporting";
 import React, { useCallback, useEffect, useRef, useState } from "react";
@@ -13,6 +13,7 @@ import { PlotDataType } from "./Plot.types";
 import { getDataHover, getValidatedOptions } from "./Plot.utils";
 import ChartFooter from "./footer";
 import ChartHeader from "./header";
+import { styled } from "@/theme";
 
 const TOOLBAR_HEIGHT = 56;
 

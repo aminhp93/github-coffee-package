@@ -1,6 +1,6 @@
 import { Box, Button } from "@mui/material";
 import React from "react";
-import { useDialogsStore } from "../../../stores";
+import { useDialogsStore } from "@/stores";
 
 const DialogContainerTemplate = () => {
   const addDialog = useDialogsStore((state) => state.addDialog);

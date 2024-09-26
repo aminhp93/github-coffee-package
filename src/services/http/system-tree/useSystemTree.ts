@@ -5,9 +5,9 @@ import { useEffect, useState } from "react";
 // Import local files
 import { ListNodesResponseSchema } from "./SystemTree.schema";
 import { SystemTreeServices } from "./SystemTree.services";
-import { useNetwork } from "../../../hooks/useNetwork";
-import { SystemNode } from "../../../services/http/system-tree/SystemTree.schema";
-import { log } from "../../../utils/logger";
+import { useNetwork } from "@/hooks/useNetwork";
+import { SystemNode } from "@/services/http/system-tree/SystemTree.schema";
+import { log } from "@/utils/logger";
 
 export const useSystemTree = () => {
   const { controllerId } = useNetwork();

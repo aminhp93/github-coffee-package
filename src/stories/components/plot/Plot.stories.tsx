@@ -6,7 +6,7 @@ import MultipleLineChartTemplate from "./MultipleLineChartTemplate";
 import DefaultChartWithTableTemplate from "./DefaultChartWithTableTemplate";
 import { Meta } from "@storybook/react";
 
-import { PlotProps } from "../../../components/plot/Plot";
+import { PlotProps } from "@/components/plot/Plot";
 import MultipleSeriesNumberTypeTemplate from "./MultipleSeriesNumberTypeTemplate";
 import MultipleSeriesEnumTypeTemplate from "./MultipleSeriesEnumTypeTemplate";
 import DefaultChartWithToolbarTemplate from "./DefaultChartWithToolbarTemplate";

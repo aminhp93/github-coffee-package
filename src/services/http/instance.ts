@@ -1,6 +1,6 @@
 import axios from "axios";
 import qs from "qs";
-import AppConfig from "../../configs/app";
+import AppConfig from "@/configs/app";
 
 const httpServiceDefault = axios.create({
   baseURL: AppConfig.baseURL,

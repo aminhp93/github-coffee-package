@@ -1,16 +1,12 @@
 // Import MUI & lodash
 import { Search as SearchIcon } from "@mui/icons-material";
-import {
-  InputAdornment,
-  TextField,
-  TextFieldProps,
-  styled,
-} from "@mui/material";
+import { InputAdornment, TextField, TextFieldProps } from "@mui/material";
 import { debounce } from "lodash";
 import React from "react";
-import { useTranslation } from "../../utils/translation/i18n";
-import { useIsMobile } from "../../hooks";
-import { useTheme } from "../../theme";
+import { useTranslation } from "@/utils/translation";
+import { useIsMobile } from "@/hooks";
+import { useTheme } from "@/theme";
+import { styled } from "@/theme";
 
 type Props = Omit<TextFieldProps, "onChange"> & {
   delay?: number;

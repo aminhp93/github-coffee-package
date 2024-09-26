@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import { styled } from "../../../theme";
+import { styled } from "@/theme";
 
 export const StyledBoxPath = styled(Box)(({ theme }) => ({
   display: "flex",

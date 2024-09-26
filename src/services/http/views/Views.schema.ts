@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { DataSourceType } from "../../../types/process-view/data-source";
+import { DataSourceType } from "@/types/process-view/data-source";
 
 // common
 const VIEWS_TYPE = ["process-view", "popup", "template"] as const;

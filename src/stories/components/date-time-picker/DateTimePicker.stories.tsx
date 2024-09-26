@@ -3,7 +3,7 @@ import DateTimePickerTemplate from "./DateTimePickerTemplate";
 import SingleDateTimePickerTemplate from "./SingleDateTimePickerTemplate";
 import DoubleDateTimePickerTemplate from "./DoubleDateTimePickerTemplate";
 import CustomDateTimePickerTemplate from "./CustomDateTimePickerTemplate";
-import { DateTimePicker } from "../../../components/date-time-picker";
+import { DateTimePicker } from "@/components/date-time-picker";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

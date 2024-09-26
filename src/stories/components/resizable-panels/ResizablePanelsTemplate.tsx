@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import React from "react";
-import { ResizablePanels } from "../../../components/resizable-panels";
-import { useTranslation } from "../../../utils/translation";
+import { ResizablePanels } from "@/components/resizable-panels";
+import { useTranslation } from "@/utils/translation";
 
 const AppTemplate = () => {
   const { t } = useTranslation();

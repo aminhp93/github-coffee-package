@@ -1,9 +1,6 @@
 import React from "react";
 import { Button } from "@mui/material";
-import {
-  NotificationProvider,
-  useSnackbar,
-} from "../../../components/notification";
+import { NotificationProvider, useSnackbar } from "@/components/notification";
 
 const NotificationTemplate = () => {
   return (

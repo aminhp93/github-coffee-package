@@ -3,7 +3,7 @@ import React from "react";
 import { TreeMethods } from "@minoru/react-dnd-treeview";
 
 // Import local files: relative path
-import { SystemTree } from "../../../components/system-tree";
+import { SystemTree } from "@/components/system-tree";
 // import SampleData from "./sample_data.json";
 import SampleData from "./data2.json";
 

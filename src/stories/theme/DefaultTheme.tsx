@@ -3,7 +3,7 @@
 
 import React from "react";
 import ThemeViewer from "./ThemeViewer";
-import { useTheme } from "../../theme";
+import { useTheme } from "@/theme";
 
 const DefaultTheme = () => {
   const theme = useTheme();

@@ -18,7 +18,7 @@ import {
   VerticalNavToggle,
 } from "../layouts/types";
 import ThemeComponent from "../theme/ThemeComponent";
-import { errorLog } from "../../utils/logger";
+import { errorLog } from "@/utils/logger";
 
 export type Settings = {
   skin: Skin;

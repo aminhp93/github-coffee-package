@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { IconButton, Tooltip } from "@mui/material";
 import CopyToClipboard from "react-copy-to-clipboard";
 import { ContentCopy } from "@mui/icons-material";
-import { useTranslation } from "../../utils/translation";
+import { useTranslation } from "@/utils/translation";
 
 type Edge = false | "start" | "end";
 

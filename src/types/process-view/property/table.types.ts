@@ -1,4 +1,4 @@
-import { FixedPropertyGroup, PropertyGroupType } from ".";
+import { FixedPropertyGroup, PropertyGroupType } from "@/types";
 
 export type TableValues = {
   columnConfig: unknown[];

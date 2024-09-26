@@ -6,8 +6,8 @@ import {
   HeaderLayout,
   HeaderLayoutProvider,
   useHeaderLayout,
-} from "../../../components/header-layout";
-import { Search } from "../../../components/search";
+} from "@/components/header-layout";
+import { Search } from "@/components/search";
 
 const DetailHeaderLayoutTemplate = () => {
   const { showDetailAction, setShowDetailAction } = useHeaderLayout();

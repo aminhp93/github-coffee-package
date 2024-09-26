@@ -20,15 +20,16 @@ import { StoryFn } from "@storybook/react";
 import { keyBy } from "lodash";
 import React from "react";
 
-import { HeaderLayoutProvider, Tooltip } from "../../..";
+import { Tooltip } from "@/components/tooltip";
+import { HeaderLayoutProvider } from "@/components/header-layout";
 import {
   GridActionsCellItem,
   GridColDef,
   Table,
   TableProps,
-} from "../../../components/table";
-import { useFilterSelect } from "../../../hooks";
-import { i18n, useTranslation } from "../../../utils/translation/i18n";
+} from "@/components/table";
+import { useFilterSelect } from "@/hooks";
+import { i18n, useTranslation } from "@/utils/translation/i18n";
 import { fakeData } from "./Table.utils";
 import ButtonChangeLanguage from "./components/ButtonChangeLanguage";
 

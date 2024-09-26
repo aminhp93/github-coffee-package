@@ -1,5 +1,5 @@
-import { GridColDef } from "../../../components/table";
-import { TFunction } from "../../../utils/translation/i18n";
+import { GridColDef } from "@/components/table";
+import { TFunction } from "@/utils/translation/i18n";
 
 export const fakeData = () => {
   const res = [];

@@ -8,7 +8,7 @@ import {
 import React from "react";
 
 // Import local files
-import { NodeType } from "../../services";
+import { NodeType } from "@/services";
 
 export type TreeOptionType =
   | "addFolder"

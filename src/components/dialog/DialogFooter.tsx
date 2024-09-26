@@ -1,8 +1,8 @@
 import { Save, Delete } from "@mui/icons-material";
 import { Box, Button } from "@mui/material";
 import React from "react";
-import { styled } from "../../theme";
-import { useTranslation } from "react-i18next";
+import { styled } from "@/theme";
+import { useTranslation } from "@/utils/translation";
 import { DialogFooterType } from "./Dialog";
 
 type CustomFooterProps = {

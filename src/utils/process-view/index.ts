@@ -1,8 +1,5 @@
-import { ItemConfig } from "../../types/process-view";
-import {
-  PropertyGroupType,
-  SetupConfig,
-} from "../../types/process-view/property";
+import { ItemConfig } from "@/types/process-view";
+import { PropertyGroupType, SetupConfig } from "@/types/process-view/property";
 
 export * from "./item-cache.utils";
 export * from "./item-theme.utils";

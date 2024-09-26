@@ -1,6 +1,6 @@
 import { SeriesOptionsType } from "highcharts";
-import { NodeDetail } from "../../services/http/system-tree/SystemTree.schema";
-import { dayjs } from "../../utils/formatter";
+import { NodeDetail } from "@/services/http/system-tree/SystemTree.schema";
+import { dayjs } from "@/utils/formatter";
 
 export interface RowTable extends Omit<NodeDetail, "children"> {
   parentId: string | null;

@@ -5,11 +5,11 @@ import {
   Button,
   ButtonGroup,
   IconButton,
-  styled,
   useTheme,
 } from "@mui/material";
 import React, { ReactNode, useRef, useState } from "react";
 import { Rnd } from "react-rnd";
+import { styled } from "@/theme";
 
 // Import icon
 import CloseIcon from "@mui/icons-material/Close";
@@ -18,9 +18,9 @@ import CropSquareIcon from "@mui/icons-material/CropSquare";
 import MinimizeIcon from "@mui/icons-material/Minimize";
 import OpenInFullIcon from "@mui/icons-material/OpenInFull";
 import SaveIcon from "@mui/icons-material/Save";
-import { useDialogsStore } from "../../stores/dialogs/Dialogs.store";
+import { useDialogsStore } from "@/stores/dialogs/Dialogs.store";
 import ConfirmCloseDialog from "./ConfirmCloseDialog";
-import { useTranslation } from "../../utils/translation";
+import { useTranslation } from "@/utils/translation";
 import DialogFooter, { DialogFooterProps } from "../dialog/DialogFooter";
 
 export type FooterProps = {

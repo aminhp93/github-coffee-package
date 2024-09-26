@@ -1,4 +1,4 @@
-import { ItemTheme, ItemThemeContent, THEME_VALUE } from "../../services";
+import { ItemTheme, ItemThemeContent, THEME_VALUE } from "@/services";
 
 export const getThemeColor = (
   itemTheme: ItemThemeContent | null,

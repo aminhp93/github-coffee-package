@@ -15,10 +15,10 @@ import React from "react";
 
 // Import local files
 import { FULLSCREEN, FULLWIDTH, MAX_WIDTH } from "./Dialog.constants";
-import { useTranslation } from "../../utils/translation";
-import { styled } from "../../theme";
+import { useTranslation } from "@/utils/translation";
+import { styled } from "@/theme";
 import DialogFooter, { DialogFooterProps } from "./DialogFooter";
-import { log } from "../../utils/logger";
+import { log } from "@/utils/logger";
 
 type DefaultActions = {
   show?: boolean;

@@ -1,4 +1,4 @@
-import { styled } from "@mui/material";
+import { styled } from "@/theme";
 import React from "react";
 import {
   ImperativePanelGroupHandle,

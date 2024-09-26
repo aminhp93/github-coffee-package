@@ -1,6 +1,6 @@
 import React, { cloneElement } from "react";
 import { Box, useTheme } from "@mui/material";
-import { useDialogsStore } from "../../stores/dialogs/Dialogs.store";
+import { useDialogsStore } from "@/stores/dialogs/Dialogs.store";
 import { RndDialog } from "../rnd-dialog/RndDialog";
 
 const DialogContainer = () => {

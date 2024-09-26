@@ -15,9 +15,9 @@ import {
   StartOfWeek,
   TimeFormat,
   DateFormat,
-} from "../../hooks/useFormatDate";
-import { dayjs } from "../../utils/formatter/dayjs";
-import { log } from "../../utils/logger";
+} from "@/hooks/useFormatDate";
+import { dayjs } from "@/utils/formatter";
+import { log } from "@/utils/logger";
 
 const UseFormatDateTemplate = () => {
   const { format, changeFormat, formatDate } = useDateFormat();

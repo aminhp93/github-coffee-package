@@ -1,8 +1,8 @@
 // import Search from "@/@core/components/search";
-import { useSearch } from "../../../hooks/useSearch";
+import { useSearch } from "@/hooks/useSearch";
 import { Box, List, ListItem, Typography } from "@mui/material";
 import React from "react";
-import { Search } from "../../../components/search";
+import { Search } from "@/components/search";
 
 const mockData = [
   {

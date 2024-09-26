@@ -1,3 +1,4 @@
+// Import libaries
 import {
   AspectRatio,
   MoreVert,
@@ -11,14 +12,16 @@ import {
   Stack,
   ToggleButton,
   ToggleButtonGroup,
-  styled,
 } from "@mui/material";
 import React from "react";
-import { CustomDateTimePicker, PlotType, ToolbarProps } from "../../..";
-// import { TimeConfig } from "../../date-time-picker/types";
+import HighchartsReact from "highcharts-react-official";
+
+// Import local files
+import { CustomDateTimePicker } from "@/components/date-time-picker";
+import { PlotType, ToolbarProps } from "@/components/plot";
 import ExportButton, { ExportType } from "./ExportButton";
 import { PlotDataType } from "../Plot.types";
-import HighchartsReact from "highcharts-react-official";
+import { styled } from "@/theme";
 
 type Props = {
   chartRef: React.RefObject<HighchartsReact.RefObject>;

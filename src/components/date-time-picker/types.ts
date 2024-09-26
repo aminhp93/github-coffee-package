@@ -1,5 +1,4 @@
-// import { dayjs } from "webpmp-v5-components";
-import { dayjs } from "../../";
+import { dayjs } from "@/utils/formatter";
 
 export type TimeType = "realTime" | "history";
 

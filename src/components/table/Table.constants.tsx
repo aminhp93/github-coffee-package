@@ -1,4 +1,4 @@
-import { DEFAULT_HEIGHT } from "../../theme/theme/constants";
+import { DEFAULT_HEIGHT } from "@/theme/theme/constants";
 
 export const ROW_HEIGHT = DEFAULT_HEIGHT;
 export const COLUMN_HEADER_HEIGHT = DEFAULT_HEIGHT;

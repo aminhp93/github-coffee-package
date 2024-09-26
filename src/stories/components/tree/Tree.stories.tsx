@@ -1,5 +1,5 @@
 import type { Meta } from "@storybook/react";
-import { Tree } from "../../../components/tree/Tree";
+import { Tree } from "@/components/tree/Tree";
 import * as argTypes from "./Tree.types";
 import DefaultTreeTemplate from "./DefaultTreeTemplate";
 

@@ -2,8 +2,9 @@ import React, { ReactNode } from "react";
 import {
   TextPosition,
   TextValues,
-} from "../../types/process-view/property/text.types";
-import { Box, BoxProps, SxProps, Theme, styled } from "@mui/material";
+} from "@/types/process-view/property/text.types";
+import { Box, BoxProps, SxProps, Theme } from "@mui/material";
+import { styled } from "@/theme";
 
 type Props = {
   itemWidth: number;

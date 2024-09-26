@@ -3,7 +3,7 @@ import { Box, IconButton, Menu, MenuItem, Tooltip } from "@mui/material";
 import React, { MouseEvent, useState } from "react";
 
 // ** Translation Imports
-import { useTranslation } from "../../../utils/translation";
+import { useTranslation } from "@/utils/translation";
 
 export type ExportType = "csv" | "png";
 

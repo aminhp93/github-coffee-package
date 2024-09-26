@@ -1,4 +1,4 @@
-import { styled } from "../../../theme";
+import { styled } from "@/theme";
 import { Box, Typography, BoxProps } from "@mui/material";
 
 export const StyledBoxRoot = styled(Box)(({ theme }) => ({

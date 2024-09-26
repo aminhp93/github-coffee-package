@@ -2,10 +2,7 @@
 import { Button, Typography } from "@mui/material";
 import React from "react";
 import { AddCircleOutlined, Downloading } from "@mui/icons-material";
-import {
-  HeaderLayout,
-  HeaderLayoutProvider,
-} from "../../../components/header-layout";
+import { HeaderLayout, HeaderLayoutProvider } from "@/components/header-layout";
 
 const DefaultHeaderLayoutTemplate = () => {
   return (

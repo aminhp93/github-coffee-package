@@ -1,7 +1,7 @@
 import React from "react";
-import { Tree } from "../../../components/tree/Tree";
+import { Tree } from "@/components/tree/Tree";
 import SampleData from "./sample_data.json";
-import { log } from "../../../utils/logger";
+import { log } from "@/utils/logger";
 
 const TreeTemplate = () => {
   return (

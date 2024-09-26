@@ -10,7 +10,7 @@ import { List, Popover, Box, BoxProps, IconButton } from "@mui/material";
 import { UnfoldMore } from "@mui/icons-material";
 
 // Import local files: relative path
-import { Tree } from "../../components/tree";
+import { Tree } from "@/components/tree";
 import CustomDragPreview from "./components/CustomDragPreview";
 import CustomNode from "./components/CustomNode";
 import OptionItem from "./components/OptionItem";
@@ -29,7 +29,7 @@ import {
   StyledBoxHeader,
   StyledTypography,
 } from "./styles";
-import { styled } from "../../theme";
+import { styled } from "@/theme";
 
 const SystemTreeComponent = (
   {

@@ -13,12 +13,12 @@ import {
 } from "@mui/material";
 import { keyBy } from "lodash";
 
-import { Table, GridColDef } from "../../../components/table";
-import { useTranslation } from "../../../utils/translation/i18n";
+import { Table, GridColDef } from "@/components/table";
+import { useTranslation } from "@/utils/translation";
 import { MEDIUM_COLUMNS, SMALL_COLUMNS, fakeData } from "./Table.utils";
-import { Theme, useMediaQuery } from "../../../theme";
-import { HeaderLayoutProvider } from "../../..";
-import { useFilterSelect } from "../../../hooks";
+import { Theme, useMediaQuery } from "@/theme";
+import { HeaderLayoutProvider } from "@/components/header-layout";
+import { useFilterSelect } from "@/hooks";
 
 const CustomHeaderTableTemplate = () => {
   const smSize = useMediaQuery((theme: Theme) => theme.breakpoints.down("sm"));

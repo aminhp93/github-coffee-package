@@ -1,4 +1,4 @@
-import { CachedItem, ItemSetup } from "../../types/process-view";
+import { CachedItem, ItemSetup } from "@/types/process-view";
 
 type AssetFolderConfigContent = {
   id: string;
@@ -148,9 +148,10 @@ export const createAssetsStructure = (
 const normalizeName = (name: string) =>
   name.replace(/\.\//, "").replace(/\.js$/, "");
 
-type Context = ReturnType<typeof require.context>;
+// type Context = ReturnType<typeof require.context>;
 
-export const cacheItems = (cache: Map<string, CachedItem>, items: Context) => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const cacheItems = (cache: Map<string, CachedItem>, items: any) => {
   for (const key of items.keys()) {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const component = (items(key) as any).default;

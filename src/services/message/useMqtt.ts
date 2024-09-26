@@ -2,7 +2,7 @@ import mqtt from "mqtt";
 import { QoS } from "mqtt-packet";
 import { useCallback, useEffect, useRef } from "react";
 import { create } from "zustand";
-import { log, errorLog } from "../../utils/logger";
+import { log, errorLog } from "@/utils/logger";
 
 type SettingsStore = {
   client: mqtt.MqttClient | null;
@@ -76,8 +76,8 @@ const useMqtt = <T>(onMessageCb?: (topic: string, data: T) => void) => {
   const mqttUnSub = useCallback(
     (subscription: Subscription) => {
       if (client) {
-        const { topic, qos } = subscription;
-        client.unsubscribe(topic, { qos }, (error) => {
+        const { topic } = subscription;
+        client.unsubscribe(topic, (error) => {
           if (error) {
             errorLog("MQTT unsubscribe error:", error);
           }
@@ -107,22 +107,19 @@ const useMqtt = <T>(onMessageCb?: (topic: string, data: T) => void) => {
     [client, mqttUnSub]
   );
 
-  const mqttUnSubAll = useCallback(
-    (subscription: { qos: QoS } = { qos: 0 }) => {
-      if (client) {
-        subscribedTopics.current.forEach((topic) => {
-          client.unsubscribe(topic, { qos: subscription.qos }, (error) => {
-            if (error) {
-              errorLog("MQTT unsubscribe error:", error);
-            }
-          });
+  const mqttUnSubAll = useCallback(() => {
+    if (client) {
+      subscribedTopics.current.forEach((topic) => {
+        client.unsubscribe(topic, (error) => {
+          if (error) {
+            errorLog("MQTT unsubscribe error:", error);
+          }
         });
-        // remove all topics from ref
-        subscribedTopics.current.clear();
-      }
-    },
-    [client]
-  );
+      });
+      // remove all topics from ref
+      subscribedTopics.current.clear();
+    }
+  }, [client]);
 
   useEffect(() => {
     if (client) {

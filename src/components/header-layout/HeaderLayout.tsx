@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState } from "react";
 import { Box, Tabs, Tab } from "@mui/material";
-import { styled } from "../../theme";
-import { DEFAULT_HEIGHT } from "../../theme/theme/constants";
+import { styled } from "@/theme";
+import { DEFAULT_HEIGHT } from "@/theme/theme/constants";
 
 export type HeaderLayoutProps = {
   infoList?: {

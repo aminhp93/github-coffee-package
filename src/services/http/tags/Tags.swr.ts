@@ -1,7 +1,7 @@
 import { useCallback, useMemo } from "react";
 import useSWR, { MutatorOptions, useSWRConfig } from "swr";
-import { useNetwork } from "../../../hooks/useNetwork";
-import { errorLog } from "../../../utils/logger";
+import { useNetwork } from "@/hooks/useNetwork";
+import { errorLog } from "@/utils/logger";
 import {
   CreateTagRequest,
   CreateTagRequestSchema,

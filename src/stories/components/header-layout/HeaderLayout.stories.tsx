@@ -1,7 +1,7 @@
 import { Meta } from "@storybook/react";
 import DefaultHeaderLayoutTemplate from "./DefaultHeaderLayoutTemplate";
 import DetailHeaderLayoutTemplate from "./DetailHeaderLayoutTemplate";
-import { HeaderLayoutProps } from "../../../components/header-layout";
+import { HeaderLayoutProps } from "@/components/header-layout";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
