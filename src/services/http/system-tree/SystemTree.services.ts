@@ -1,4 +1,4 @@
-import { httpService } from "../../..";
+import httpService from "../instance";
 import {
   NodeType,
   ListNodesResponse,
