@@ -34,6 +34,7 @@ export default defineConfig(
       "components/table": "src/components/table/index.ts",
       "components/tooltip": "src/components/tooltip/index.ts",
       "components/tree": "src/components/tree/index.ts",
+      components: "src/components/index.ts",
       // configs
       configs: "src/configs/index.ts",
       // events
@@ -43,13 +44,21 @@ export default defineConfig(
       // services
       "services/http": "src/services/http/index.ts",
       "services/message": "src/services/message/index.ts",
+      services: "src/services/index.ts",
       // stores
+      "stores/dayjs": "src/stores/dayjs/index.ts",
+      "stores/dialogs": "src/stores/dialogs/index.ts",
       stores: "src/stores/index.ts",
       // theme
       theme: "src/theme/index.ts",
       // types
       types: "src/types/index.ts",
       // utils
+      "utils/formatter": "src/utils/formatter/index.ts",
+      "utils/load-remote": "src/utils/load-remote/index.ts",
+      "utils/number": "src/utils/number/index.ts",
+      "utils/process-view": "src/utils/process-view/index.ts",
+      "utils/translation": "src/utils/translation/index.ts",
       utils: "src/utils/index.ts",
     },
     output: {
